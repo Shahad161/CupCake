@@ -4,15 +4,119 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="8dp"
     tools:context=".ui.HomeActivity">
 
-    <TextView
+    <ImageButton
+        android:id="@+id/btn_toSearch"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_baseline_search_24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="8dp" />
+
+
+       <TextView
+           android:id="@+id/tv_countryMax"
+           android:layout_width="wrap_content"
+           android:text="البلد"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           android:layout_marginTop="32dp"
+           android:padding="8dp"
+           android:textSize="24sp"
+           android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_cityMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="المدينه"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_countryMax"
+        app:layout_constraintStart_toEndOf="@+id/tv_countryMax" />
+
+    <TextView
+        android:id="@+id/tv_populationMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عدد السكان"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_cityMax"
+        app:layout_constraintStart_toEndOf="@+id/tv_cityMax"
+        app:layout_constraintTop_toTopOf="@+id/tv_cityMax" />
+
+    <TextView
+        android:id="@+id/tv_longitudeMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="خط الطول"
+        app:layout_constraintEnd_toEndOf="@+id/tv_countryMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_countryMax" />
+
+    <TextView
+        android:id="@+id/tv_LatitudeMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="خط العرض"
+        app:layout_constraintEnd_toEndOf="@+id/tv_cityMax"
+        app:layout_constraintStart_toEndOf="@+id/tv_longitudeMax"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cityMax" />
+
+    <!--From this line, everything starts small-->
+
+    <TextView
+        android:id="@+id/tv_countryMin"
+        android:layout_width="wrap_content"
+        android:text="البلد"
+        app:layout_constraintTop_toBottomOf="@id/tv_LatitudeMax"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="64dp"
+        android:padding="8dp"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_cityMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="العاصمه"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_countryMin"
+        app:layout_constraintStart_toEndOf="@+id/tv_countryMin" />
+
+    <TextView
+        android:id="@+id/tv_populationMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عدد السكان"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_cityMin"
+        app:layout_constraintStart_toEndOf="@+id/tv_cityMin"
+        app:layout_constraintTop_toTopOf="@+id/tv_cityMin" />
+
+    <TextView
+        android:id="@+id/tv_longitudeMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="خط الطول"
+        app:layout_constraintEnd_toEndOf="@+id/tv_countryMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_countryMin" />
+
+    <TextView
+        android:id="@+id/tv_LatitudeMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="خط العرض"
+        app:layout_constraintEnd_toEndOf="@+id/tv_cityMin"
+        app:layout_constraintStart_toEndOf="@+id/tv_longitudeMin"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cityMin" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

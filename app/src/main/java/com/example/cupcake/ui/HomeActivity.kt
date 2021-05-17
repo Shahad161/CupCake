@@ -1,12 +1,20 @@
 package com.example.cupcake.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.example.cupcake.R
+import android.view.LayoutInflater
+import com.example.cupcake.databinding.ActivityHomeBinding
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity<ActivityHomeBinding>() {
+    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding
+        get() = ActivityHomeBinding::inflate
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+
+        binding?.btnToSearch?.setOnClickListener {
+            startActivity(Intent(this, SearchActivity::class.java))
+        }
+
     }
 }

@@ -1,12 +1,10 @@
 package com.example.cupcake.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.example.cupcake.R
+import android.view.LayoutInflater
+import com.example.cupcake.databinding.ActivitySearchBinding
 
-class SearchActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_search)
-    }
+class SearchActivity : BaseActivity<ActivitySearchBinding>() {
+    override val bindingInflater: (LayoutInflater) -> ActivitySearchBinding
+        get() = ActivitySearchBinding::inflate
 }
+
