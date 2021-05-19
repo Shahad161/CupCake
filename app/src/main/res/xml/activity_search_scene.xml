@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/container1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/cardshape"
+            app:layout_constraintBottom_toBottomOf="@+id/et_search"
+            app:layout_editor_absoluteY="176dp"
+            app:layout_constraintEnd_toEndOf="@+id/et_search"
+            app:layout_constraintStart_toStartOf="@+id/et_search" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/container1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/cardshape"
+            android:orientation="horizontal"
+            android:padding="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search"/>
+
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+        <OnClick
+            app:targetId="@+id/searchbtn"
+            app:clickAction="toggle"
+            />
+    </Transition>
+</MotionScene>
+

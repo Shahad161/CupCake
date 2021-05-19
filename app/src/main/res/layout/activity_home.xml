@@ -55,12 +55,12 @@
             app:layout_constraintStart_toStartOf="@+id/tv_countryMax"
             app:layout_constraintTop_toBottomOf="@+id/tv_countryMax" />
 
-
         <TextView
             android:id="@+id/tv_populationMax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
+
+            android:layout_marginStart="8dp"
             android:text="4,856,736 M"
             android:textColor="@color/smallText"
             android:textSize="16sp"
@@ -146,7 +146,7 @@
             android:id="@+id/tv_populationMin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
+            android:layout_marginStart="8dp"
             android:text="4,856,736 M"
             android:textColor="@color/smallText"
             android:textSize="16sp"
