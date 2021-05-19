@@ -4,19 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:background="@color/white"
+    android:padding="16dp"
     tools:context=".ui.SearchActivity">
 
     <EditText
         android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/cardshape"
         android:hint="Searching...."
-        android:padding="8dp"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:queryHint="this box for searching country" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="@+id/et_search"
+        app:layout_constraintEnd_toEndOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="@+id/et_search" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/feb_business_9__converted_"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/container1"
@@ -32,6 +53,7 @@
         <TextView
             android:id="@+id/tv_countrySearch"
             android:text="cities"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_marginEnd="24dp"
             android:layout_width="wrap_content"
@@ -41,6 +63,7 @@
             android:id="@+id/tv_citySearch"
             android:text="المدينه"
             android:layout_marginEnd="24dp"
+            android:textColor="@color/white"
             android:textSize="16sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -49,6 +72,7 @@
             android:id="@+id/tv_populationSearch"
             android:layout_width="wrap_content"
             android:text="عدد السكان"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
