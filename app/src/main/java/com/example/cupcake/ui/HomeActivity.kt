@@ -34,5 +34,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         .drawText(true).textSize(30.0F).duration(2000)
     mAnimatedPieView.applyConfig(config)
     mAnimatedPieView.start()
+
 }
 }
