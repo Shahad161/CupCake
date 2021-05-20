@@ -38,6 +38,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         county.add("Karbalaa")
 
 
+
         barList = ArrayList()
         barList.add(BarEntry(4f, 0))
         barList.add(BarEntry(3f, 1))
@@ -56,12 +57,18 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         barData = BarData(county,barDataSet)
         binding!!.barChart.data = barData
 
-        barDataSet.setColors(ColorTemplate.JOYFUL_COLORS, 250)
+        barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14f
 
         barChart.animateXY(2000,2000)
         barChart.setVisibleXRangeMaximum(5f)
+        barChart.xAxis.textColor = Color.WHITE
+        barChart.axisRight.textColor = Color.WHITE
+        barChart.axisLeft.textColor = Color.WHITE
+        barChart.setDescription("Cities Population")
+        barChart.setDescriptionColor(Color.WHITE)
+        barChart.legend.textColor = Color.WHITE
     }
 }
 
