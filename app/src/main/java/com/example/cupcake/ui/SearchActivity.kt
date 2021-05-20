@@ -16,6 +16,8 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
     lateinit var barList: ArrayList<BarEntry>
     lateinit var county: ArrayList<String>
 
+    // this comment for test
+
 
 
     override val bindingInflater: (LayoutInflater) -> ActivitySearchBinding
