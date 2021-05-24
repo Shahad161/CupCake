@@ -11,4 +11,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="offwhite">#EAE6E6</color>
     <color name="smallText">#616A94</color>
+    <color name="splash_background">#0f1023</color>
+
 </resources>

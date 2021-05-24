@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.example.cupcake.R
 
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
@@ -15,6 +16,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_CupCake)
         _binding = bindingInflater(layoutInflater)
         setContentView(requireNotNull(_binding).root)
     }
