@@ -4,13 +4,19 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.ActivityHomeBinding
+import com.example.cupcake.util.CsvParser
+import com.example.cupcake.model.Model
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
+    override val Log_tag: String = "MAIN_ACTIVITY"
     override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding
         get() = ActivityHomeBinding::inflate
 
@@ -36,4 +42,27 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     mAnimatedPieView.start()
 
 }
+    override fun setup() {
+        parseFile()
+    }
+    override fun addCallBack() {
+    }
+
+    private fun parseFile(){
+        val inputStream = assets.open("worldcities.csv")
+        val buffer = BufferedReader(InputStreamReader(inputStream))
+        val parser = CsvParser()
+        buffer.forEachLine {
+            val currentCity = parser.parse(it)
+            log(currentCity)
+            Repository.addCountry(currentCity)
+
+        }
+        bindCountry(Repository.getCurrentCity())
+    }
+    private fun bindCountry(country: Model){
+        binding?.apply {
+            countryMax.text = country.city
+        }
+    }
 }

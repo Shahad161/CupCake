@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/tv_countryMax"
+            android:id="@+id/countryMax"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="8dp"
@@ -52,8 +52,8 @@
             android:layout_marginStart="8dp"
             android:src="@drawable/ic_baseline_people_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tv_countryMax"
-            app:layout_constraintTop_toBottomOf="@+id/tv_countryMax" />
+            app:layout_constraintStart_toStartOf="@+id/countryMax"
+            app:layout_constraintTop_toBottomOf="@+id/countryMax" />
 
         <TextView
             android:id="@+id/tv_populationMax"

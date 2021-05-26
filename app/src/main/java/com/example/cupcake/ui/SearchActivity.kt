@@ -18,8 +18,6 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
     // this comment for test
 
-
-
     override val bindingInflater: (LayoutInflater) -> ActivitySearchBinding
         get() = ActivitySearchBinding::inflate
 
@@ -38,8 +36,6 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         county.add("Paris")
         county.add("Basra")
         county.add("Karbalaa")
-
-
 
         barList = ArrayList()
         barList.add(BarEntry(4f, 0))
@@ -71,6 +67,17 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
         barChart.setDescription("Cities Population")
         barChart.setDescriptionColor(Color.WHITE)
         barChart.legend.textColor = Color.WHITE
+    }
+
+    override val Log_tag: String
+        get() = TODO("Not yet implemented")
+
+    override fun setup() {
+        TODO("Not yet implemented")
+    }
+
+    override fun addCallBack() {
+        TODO("Not yet implemented")
     }
 }
 
