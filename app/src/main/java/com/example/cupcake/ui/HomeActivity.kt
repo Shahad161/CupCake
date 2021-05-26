@@ -14,7 +14,7 @@ import com.razerdp.widget.animatedpieview.data.SimplePieInfo
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-
+// temp comment
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val Log_tag: String = "MAIN_ACTIVITY"
     override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding
