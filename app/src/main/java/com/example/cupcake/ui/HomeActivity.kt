@@ -58,11 +58,25 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
             Repository.addCountry(currentCity)
 
         }
-        bindCountry(Repository.getCurrentCity())
+        bindCountryMax(Repository.getMaxCity())
+        bindCountryMin(Repository.getMinCity())
     }
-    private fun bindCountry(country: Model){
+    private fun bindCountryMax(country: Model){
         binding?.apply {
-            countryMax.text = country.city
+            countryMax.text = ("${country.city}, ${country.country}")
+            populationMax.text = ("${country.population} M")
+            longitudeMaxNum.text = country.long.toString()
+            LatitudeMaxNum.text = country.lat.toString()
+
+        }
+    }
+    private fun bindCountryMin(country: Model){
+        binding?.apply {
+            countryMin.text = ("${country.city}, ${country.country}")
+            populationMin.text = ("${country.population} M")
+            longitudeMinNum.text = country.long.toString()
+            LatitudeMinNum.text = country.lat.toString()
+
         }
     }
 }

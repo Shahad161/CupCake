@@ -6,5 +6,5 @@ data class Model(
     val country: String,
     val population: Int,
     val lat: Double,
-    val lang: Double
+    val long: Double
 )

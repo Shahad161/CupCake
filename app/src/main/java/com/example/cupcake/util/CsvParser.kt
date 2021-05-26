@@ -10,7 +10,7 @@ class CsvParser {
             country = tokens[constant.ColumnIndex.COUNTRY],
             population = tokens[constant.ColumnIndex.POPULATION].toInt(),
             lat = tokens[constant.ColumnIndex.LAT].toDouble(),
-            lang = tokens[constant.ColumnIndex.LANG].toDouble(),
+            long = tokens[constant.ColumnIndex.LONG].toDouble(),
         )
     }
 }

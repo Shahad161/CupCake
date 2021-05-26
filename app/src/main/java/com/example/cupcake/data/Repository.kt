@@ -11,4 +11,14 @@ object Repository {
         countryList.add(country)
     }
     fun getCurrentCity(): Model = countryList[countryIndex]
+    fun getMaxCity():Model {
+        val city = countryList.maxByOrNull { it.population }
+        val maxIndex = countryList.indexOf(city)
+        return countryList[maxIndex]
+    }
+    fun getMinCity():Model {
+        val city = countryList.minByOrNull { it.population }
+        val maxIndex = countryList.indexOf(city)
+        return countryList[maxIndex]
+    }
 }
