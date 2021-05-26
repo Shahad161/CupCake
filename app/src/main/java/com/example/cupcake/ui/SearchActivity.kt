@@ -11,6 +11,7 @@ import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
 
 class SearchActivity : BaseActivity<ActivitySearchBinding>() {
+    override val LOG_TAG: String = "SEARCH_ACTIVITY"
     lateinit var barData: BarData
     lateinit var barDataSet: BarDataSet
     lateinit var barList: ArrayList<BarEntry>
@@ -20,8 +21,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
 
 
-    override val bindingInflater: (LayoutInflater) -> ActivitySearchBinding
-        get() = ActivitySearchBinding::inflate
+    override val bindingInflater: (LayoutInflater) -> ActivitySearchBinding = ActivitySearchBinding::inflate
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

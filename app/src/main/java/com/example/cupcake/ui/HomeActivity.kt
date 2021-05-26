@@ -11,8 +11,9 @@ import com.razerdp.widget.animatedpieview.data.SimplePieInfo
 
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
-    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding
-        get() = ActivityHomeBinding::inflate
+    override val LOG_TAG: String = "MAIN_ACTIVITY"
+    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding = ActivityHomeBinding::inflate
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
