@@ -7,9 +7,9 @@ data class Repository(
     val city: String,
     val country: String,
     val capital: String,
-    val population: String,
-    val lat:String,
-    val lng:String
+    val population: Int,
+    val lat:Int,
+    val lng:Int
 
 
 )
