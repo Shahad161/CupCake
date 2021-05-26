@@ -1,5 +1,15 @@
 package com.example.cupcake.data
 
-// هذا مثل كلاس ال DataManager  اللي سواه بارق
-object Repository {
-}
+
+//This is data type of the Components
+
+data class Repository(
+    val city: String,
+    val country: String,
+    val capital: String,
+    val population: String,
+    val lat:String,
+    val lng:String
+
+
+)
