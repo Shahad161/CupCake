@@ -1,10 +1,15 @@
 package com.example.cupcake.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.ActivityHomeBinding
+import com.example.cupcake.model.Model
+import com.google.android.gms.maps.GoogleMap
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
@@ -14,7 +19,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     override val LOG_TAG: String = "MAIN_ACTIVITY"
     override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding = ActivityHomeBinding::inflate
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         PieChart()
@@ -23,6 +27,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         }
 
     }
+
+
+
     fun PieChart() {
     val mAnimatedPieView: AnimatedPieView = findViewById(binding!!.PieChart.id)
     val config = AnimatedPieViewConfig()
@@ -37,4 +44,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     mAnimatedPieView.start()
 
 }
+
+    override fun setup() {
+
+    }
+
+    override fun addCallbacks() {
+
+    }
 }
