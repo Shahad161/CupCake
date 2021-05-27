@@ -23,8 +23,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         _binding = bindingInflater(layoutInflater)
         setContentView(requireNotNull(_binding).root)
 
+        setup()
+        addCallBack()
+
     }
 
+
+   abstract override fun setup()
+   abstract override fun addCallBack()
     //This function of log
     protected fun log(value : Any){
         log.v(LOG_TAG , value.toString())
