@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
+@Suppress("UNCHECKED_CAST")
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     abstract val Log_tag: String
     abstract val bindingInflater: (LayoutInflater) -> VB
@@ -14,6 +15,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         get() = _binding as? VB
         set(value) = TODO()
 
+
+    //This is onCreate function
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = bindingInflater(layoutInflater)
@@ -29,7 +32,5 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     protected fun log(value: Any){
         Log.v(Log_tag, value.toString())
     }
+
 }
-
-
-

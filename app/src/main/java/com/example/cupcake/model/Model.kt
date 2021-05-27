@@ -5,6 +5,7 @@ data class Model(
     val city: String,
     val country: String,
     val population: Int,
+    val capital: String,
     val lat: Double,
-    val long: Double
+    val lon: Double
 )
