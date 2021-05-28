@@ -4,15 +4,20 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.ActivityHomeBinding
+import com.example.cupcake.util.CsvParser
+import com.example.cupcake.model.Model
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
-    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding
-        get() = ActivityHomeBinding::inflate
+    override val Log_tag: String = "MAIN_ACTIVITY"
+    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding = ActivityHomeBinding::inflate
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +25,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         binding?.btnToSearch?.setOnClickListener {
             startActivity(Intent(this, SearchActivity::class.java))
         }
-
     }
     fun PieChart() {
     val mAnimatedPieView: AnimatedPieView = findViewById(binding!!.PieChart.id)
@@ -36,4 +40,40 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     mAnimatedPieView.start()
 
 }
+    override fun setup() {
+        parseFile()
+    }
+    override fun addCallBack() {
+    }
+
+    private fun parseFile(){
+        val inputStream = assets.open("worldcities.csv")
+        val buffer = BufferedReader(InputStreamReader(inputStream))
+        val parser = CsvParser()
+        buffer.forEachLine {
+            val currentCity = parser.parse(it)
+            log(currentCity)
+            Repository.addCountry(currentCity)
+        }
+        bindCountryMax(Repository.getMaxCity())
+        bindCountryMin(Repository.getMinCity())
+    }
+    private fun bindCountryMax(country: Model){
+        binding?.apply {
+            countryMax.text = ("${country.city}, ${country.country}")
+            populationMax.text = ("${country.population} M")
+            longitudeMaxNum.text = country.lon.toString()
+            LatitudeMaxNum.text = country.lat.toString()
+
+        }
+    }
+    private fun bindCountryMin(country: Model){
+        binding?.apply {
+            countryMin.text = ("${country.city}, ${country.country}")
+            populationMin.text = ("${country.population} M")
+            longitudeMinNum.text = country.lon.toString()
+            LatitudeMinNum.text = country.lat.toString()
+
+        }
+    }
 }
