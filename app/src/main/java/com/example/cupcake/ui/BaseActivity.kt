@@ -35,10 +35,9 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     //basic function in this project
     protected abstract fun setup()
     protected abstract fun addCallbacks()
+
     //This function of log
-    protected fun log(value : Any){
-        Log.v(LOG_TAG , value.toString())
+    protected fun log(value: Any) {
+        Log.v(LOG_TAG, value.toString())
     }
 }
-
-
