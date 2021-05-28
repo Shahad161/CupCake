@@ -28,7 +28,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         setup()
         addCallBack()
 
-
     }
     abstract fun setup()
     abstract fun addCallBack()

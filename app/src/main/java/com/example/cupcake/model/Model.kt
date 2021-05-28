@@ -1,6 +1,5 @@
 package com.example.cupcake.model
 
-// وهذا مثل كلاس match اليي سواه بارق
 data class Model(
     val city: String,
     val country: String,

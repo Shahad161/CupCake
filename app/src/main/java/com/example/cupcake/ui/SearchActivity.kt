@@ -85,6 +85,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
                 BarChart()
             }
 
+
     }
 
     override fun addCallBack() {
@@ -120,7 +121,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
 
     //get all population for cities in some country
 
-   // fun getPopulation() {
+    // fun getPopulation() {
     //            // solve the wasted data in population
     //            for (i in 0 until _cityListItem.size) {
     //                if (_populationList[i].trim().isNotEmpty()) {
