@@ -31,13 +31,13 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
     private var _cityListItem = arrayListOf<String>()
     private var _populationList = mutableListOf<String>()
     var adapter: ArrayAdapter<String>? = null
-    private val _populationDataList = arrayListOf<BarEntry>()
+    private var _populationDataList = arrayListOf<BarEntry>()
     private var _cityList: MutableList<Repository> = mutableListOf<Repository>()
 
     lateinit var barData: BarData
     lateinit var barDataSet: BarDataSet
-    lateinit var barList: ArrayList<BarEntry>
-    lateinit var county: ArrayList<String>
+
+
 
 
     override fun setup() {
@@ -84,7 +84,7 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
                 binding?.listView?.isVisible = false
                 binding?.barChart?.isVisible = true
 
-                getInfo()
+                BarChart()
             }
 
     }
@@ -122,48 +122,47 @@ class SearchActivity : BaseActivity<ActivitySearchBinding>() {
     }
 
     //get all population for cities in some country
-    fun getPopulation() {
-        // solve the wasted data in population
-        for (i in 0 until _cityListItem.size) {
-            if (_populationList[i].trim().isNotEmpty()) {
-                _populationDataList.add(BarEntry(i.toFloat() + 1, _populationList[i].toFloat()))
-            } else {
-                _populationList[i] = "0.0"
-                _populationList.add(BarEntry(i.toFloat() + 1, _populationList[i].toFloat()))
-                Toast.makeText(this, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT)
-                    .show()
-            }
-        }
+
+   // fun getPopulation() {
+    //            // solve the wasted data in population
+    //            for (i in 0 until _cityListItem.size) {
+    //                if (_populationList[i].trim().isNotEmpty()) {
+    //                    _populationDataList. add(BarEntry(_populationList[i].toFloat(),i.toFloat() + 1 ))
+    //                } else {
+    //                    _populationList[i] = "0.0"
+    //                    _populationList.add(BarEntry( _populationList[i].toFloat(), i.toFloat() + 1))
+    //                   Toast.makeText(this, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT)
+    //                        .show()
+    //               }
+    //            }
+    //
+    //       }
+
+
+    fun getInfo(){
+        listOfCountryName= ArrayList()
+        listOfCountryName.add("Iraq")
+        listOfCountryName.add("London")
+        listOfCountryName.add("Dubai")
+        listOfCountryName.add("Cairo")
+        listOfCountryName.add("Paris")
+        listOfCountryName.add("Basra")
+        listOfCountryName.add("Karbalaa")
+
+        _populationDataList = ArrayList()
+        _populationDataList.add(BarEntry(4f, 0))
+        _populationDataList.add(BarEntry(3f, 1))
+        _populationDataList.add(BarEntry(3.5f, 2))
+        _populationDataList.add(BarEntry(8.9f, 3))
+        _populationDataList.add(BarEntry(2f, 4))
+        _populationDataList.add(BarEntry(4f, 5))
+        _populationDataList.add(BarEntry(4f, 6))
 
     }
-
-    fun getInfo() {
-        county = ArrayList()
-        county.add("Iraq")
-        county.add("London")
-        county.add("Dubai")
-        county.add("Cairo")
-        county.add("Paris")
-        county.add("Basra")
-        county.add("Karbalaa")
-
-
-
-        barList = ArrayList()
-        barList.add(BarEntry(4f, 0))
-        barList.add(BarEntry(3f, 1))
-        barList.add(BarEntry(3.5f, 2))
-        barList.add(BarEntry(8.9f, 3))
-        barList.add(BarEntry(2f, 4))
-        barList.add(BarEntry(4f, 5))
-        barList.add(BarEntry(4f, 6))
-
-    }
-
     fun BarChart() {
         val barChart: BarChart = findViewById(binding!!.barChart.id)
-        barDataSet = BarDataSet(barList, "Population")
-        barData = BarData(county, barDataSet)
+        barDataSet = BarDataSet(_populationDataList, "Population")
+        barData = BarData(listOfCountryName, barDataSet)
         binding!!.barChart.data = barData
 
         barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
