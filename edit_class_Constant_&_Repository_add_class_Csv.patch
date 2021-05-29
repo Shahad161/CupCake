@@ -1,0 +1,77 @@
+Index: app/src/main/java/com/example/cupcake/util/CsvParser.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/cupcake/util/CsvParser.kt	(date 1622043198688)
++++ app/src/main/java/com/example/cupcake/util/CsvParser.kt	(date 1622043198688)
+@@ -0,0 +1,16 @@
++package com.example.cupcake.util
++
++// This is split the values based on the Sorter ( , ) to become Table
++class CsvParser {
++    fun parse(line : String) : City {
++        val tokens = line.split(",")
++        return City(
++            city = tokens[Constants.ColumnIndex.CITY],
++            country   = tokens[Constants.ColumnIndex.COUNTRY],
++            capital  = tokens[Constants.ColumnIndex.CAPITAL],
++            population  = tokens[Constants.ColumnIndex.POPULATION],
++            lat = tokens[Constants.ColumnIndex.LAT],
++            lng = tokens[Constants.ColumnIndex.LNG]
++        )
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/example/cupcake/data/Repository.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/cupcake/data/Repository.kt	(revision 5cb0f738e6b04ae59098b2f6e8b6e9a18530c48f)
++++ app/src/main/java/com/example/cupcake/data/Repository.kt	(date 1622043080270)
+@@ -1,5 +1,15 @@
+ package com.example.cupcake.data
+ 
+-// هذا مثل كلاس ال DataManager  اللي سواه بارق
+-object Repository {
+-}
+\ No newline at end of file
++
++//This is data type of the Components
++
++data class Repository(
++    val city: String,
++    val country: String,
++    val capital: String,
++    val population: String,
++    val lat:String,
++    val lng:String
++
++
++)
+\ No newline at end of file
+Index: app/src/main/java/com/example/cupcake/util/Constant.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/cupcake/util/Constant.kt	(revision 5cb0f738e6b04ae59098b2f6e8b6e9a18530c48f)
++++ app/src/main/java/com/example/cupcake/util/Constant.kt	(date 1622043173660)
+@@ -1,5 +1,13 @@
+ package com.example.cupcake.util
+ 
++// This is select number of the Column Index Components
+ object Constant {
+-}
+-
++    object ColumnIndex {
++        const val CITY = 0
++        const val COUNTRY = 4
++        const val CAPITAL = 7
++        const val POPULATION = 9
++        const val LAT = 2
++        const val LNG = 3
++    }
++}
+\ No newline at end of file
