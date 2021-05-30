@@ -22,6 +22,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     }
 
     override fun addCallBack() {
+        getInfo()
+        BarChart()
     }
 
     fun getInfo(){
@@ -47,14 +49,20 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     }
 
     fun BarChart(){
-        val barChart: BarChart = view?.findViewById(binding!!.barChart.id)!!
+        val barChart: BarChart = binding.barChart
         barDataSet = BarDataSet(barList, "Population")
         barData = BarData(county,barDataSet)
         binding!!.barChart.data = barData
-        barDataSet.setColors(ColorTemplate.JOYFUL_COLORS, 250)
+        barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14f
         barChart.animateXY(2000,2000)
         barChart.setVisibleXRangeMaximum(5f)
+        barChart.xAxis.textColor = Color.WHITE
+        barChart.axisRight.textColor = Color.WHITE
+        barChart.axisLeft.textColor = Color.WHITE
+        barChart.setDescription("Cities Population")
+        barChart.setDescriptionColor(Color.WHITE)
+        barChart.legend.textColor = Color.WHITE
     }
 }
