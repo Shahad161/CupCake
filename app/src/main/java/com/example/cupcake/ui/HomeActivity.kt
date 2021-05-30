@@ -41,5 +41,4 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(){
             Repository.addCountry(currentCity)
         }
     }
-
 }

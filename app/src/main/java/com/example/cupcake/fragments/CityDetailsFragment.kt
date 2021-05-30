@@ -11,4 +11,5 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
 
     override fun addCallBack() {
     }
+
 }

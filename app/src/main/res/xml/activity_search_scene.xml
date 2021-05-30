@@ -7,10 +7,12 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/cardshape"
-            app:layout_constraintBottom_toBottomOf="@+id/et_search"
             app:layout_editor_absoluteY="176dp"
             app:layout_constraintEnd_toEndOf="@+id/et_search"
-            app:layout_constraintStart_toStartOf="@+id/et_search" />
+            app:layout_constraintStart_toStartOf="@+id/et_search"
+            app:layout_constraintTop_toBottomOf="@+id/et_search"
+
+            />
         <Constraint
             android:id="@+id/barChart"
             app:layout_constraintBottom_toBottomOf="parent"
