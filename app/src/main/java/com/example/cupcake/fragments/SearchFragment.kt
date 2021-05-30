@@ -48,15 +48,12 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     fun BarChart(){
         val barChart: BarChart = view?.findViewById(binding!!.barChart.id)!!
-
         barDataSet = BarDataSet(barList, "Population")
         barData = BarData(county,barDataSet)
         binding!!.barChart.data = barData
-
         barDataSet.setColors(ColorTemplate.JOYFUL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14f
-
         barChart.animateXY(2000,2000)
         barChart.setVisibleXRangeMaximum(5f)
     }
