@@ -26,6 +26,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
     override fun addCallBack() {
         getCitiesInfo()
+        pieChart()
     }
 
 //call function to get Info from Csv file
@@ -57,8 +58,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     }
 
 // Display PieChart
-    fun PieChart() {
-        val mAnimatedPieView: AnimatedPieView? = view?.findViewById(binding.PieChart.id)
+    fun pieChart() {
+        val mAnimatedPieView: AnimatedPieView? = binding.PieChart
         val config = AnimatedPieViewConfig()
         config.startAngle(-90f)
             .addData(SimplePieInfo(30.0, Color.parseColor("#386CBA"), "Baghdad"))
