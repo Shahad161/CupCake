@@ -2,56 +2,50 @@ package com.example.cupcake.fragments
 
 import android.annotation.SuppressLint
 import android.graphics.Color
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
-import com.example.cupcake.databinding.FragmentCityDetailsBinding
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
 import com.example.cupcake.ui.HomeActivity
-import com.example.cupcake.util.CsvParser
-import com.github.mikephil.charting.charts.Chart
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
-    var searchFragment = SearchFragment()
     override fun getViewBinding() = FragmentHomeBinding.inflate(layoutInflater)
     @SuppressLint("UseRequireInsteadOfGet")
+
     override fun setUpViews() {
+        // Open search fragment when you click on ImageButton in frontend
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-            transaction.replace(R.id.fragment_container, searchFragment).commit()
+            transaction.replace(R.id.fragment_container, SearchFragment()).commit()
         }
     }
     override fun addCallBack() {
         getCitiesInfo()
     }
 
+//call function to get Info from Csv file
     private fun getCitiesInfo(){
         (activity as HomeActivity).parseFile()
         bindCountryMax(Repository.getMaxCity())
         bindCountryMin(Repository.getMinCity())
     }
 
+// Send Info. of MinCity to frontend
     fun bindCountryMax(country: Model){
         binding?.apply {
             countryMax!!.text = ("${country.city}, ${country.country}")
             populationMax!!.text = ("${country.population} M")
             longitudeMaxNum!!.text = country.lon.toString()
             LatitudeMaxNum!!.text = country.lat.toString()
-
         }
     }
+
+// Send Info. of MinCity to frontend
     fun bindCountryMin(country: Model){
         binding?.apply {
             countryMin!!.text = ("${country.city}, ${country.country}")
@@ -61,6 +55,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
         }
     }
+
+// Display PieChart
     fun PieChart() {
         val mAnimatedPieView: AnimatedPieView? = view?.findViewById(binding.PieChart.id)
         val config = AnimatedPieViewConfig()
@@ -73,7 +69,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             .drawText(true).textSize(30.0F).duration(2000)
         mAnimatedPieView?.applyConfig(config)
         mAnimatedPieView?.start()
-
     }
-
 }
