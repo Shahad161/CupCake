@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import androidx.fragment.app.FragmentManager
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
-import com.example.cupcake.databinding.ActivityHomeBinding
+import com.example.cupcake.databinding.ActivityMainBinding
 import com.example.cupcake.fragments.HomeFragment
 import com.example.cupcake.util.CsvParser
 import com.razerdp.widget.animatedpieview.AnimatedPieView
@@ -14,9 +14,9 @@ import com.razerdp.widget.animatedpieview.data.SimplePieInfo
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class HomeActivity : BaseActivity<ActivityHomeBinding>(){
+class MainActivity : BaseActivity<ActivityMainBinding>(){
     override val Log_tag: String = "MAIN_ACTIVITY"
-    override val bindingInflater: (LayoutInflater) -> ActivityHomeBinding = ActivityHomeBinding::inflate
+    override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
 
     override fun setup() {
         addFragment()

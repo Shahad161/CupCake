@@ -7,7 +7,7 @@ import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
-import com.example.cupcake.ui.HomeActivity
+import com.example.cupcake.ui.MainActivity
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
@@ -31,7 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 //call function to get Info from Csv file
     private fun getCitiesInfo(){
-        (activity as HomeActivity).parseFile()
+        (activity as MainActivity).parseFile()
         bindCountryMax(Repository.getMaxCity())
         bindCountryMin(Repository.getMinCity())
     }
