@@ -211,6 +211,14 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <com.razerdp.widget.animatedpieview.AnimatedPieView
+        android:id="@+id/PieChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_toSearch" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
@@ -224,13 +232,5 @@
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/earth" />
 
-    <com.razerdp.widget.animatedpieview.AnimatedPieView
-        android:id="@+id/PieChart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_toSearch" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
