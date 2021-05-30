@@ -8,4 +8,7 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
 
         // set up recycler view and bind data to UI
     }
+
+    override fun addCallBack() {
+    }
 }

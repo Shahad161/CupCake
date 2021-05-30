@@ -21,13 +21,13 @@ abstract class BaseFragment <VB : ViewBinding> : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        addCallBack()
         return binding.root
     }
     private fun init() {
         binding = getViewBinding()
         setUpViews()
-
     }
     open fun setUpViews() {}
-
+    abstract fun addCallBack()
 }

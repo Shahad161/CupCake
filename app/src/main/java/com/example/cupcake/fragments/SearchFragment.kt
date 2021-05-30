@@ -8,4 +8,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
         // set up recycler view and bind data to UI
     }
+
+    override fun addCallBack() {
+    }
 }
