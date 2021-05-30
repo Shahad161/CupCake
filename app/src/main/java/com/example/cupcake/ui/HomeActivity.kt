@@ -25,12 +25,14 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(){
     override fun addCallBack() {
     }
 
+//add fragment inside Home_Activity
     private fun addFragment(){
-        val homeFragment = HomeFragment()
         val fm: FragmentManager = supportFragmentManager
-        fm.beginTransaction().add(R.id.fragment_container, homeFragment).commit()
+        fm.beginTransaction().add(R.id.fragment_container, HomeFragment()).commit()
     }
-        fun parseFile(){
+
+// read data from Csv file
+    fun parseFile(){
         val inputStream = assets.open("worldcities.csv")
         val buffer = BufferedReader(InputStreamReader(inputStream))
         val parser = CsvParser()
