@@ -27,6 +27,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
+            clearLists()
             search()
 
         }
@@ -102,10 +103,13 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
-    //    binding.barChart.xAxis.setGranularity = 1f
-      //  barChart.xAxis.isEnabled = true
 
-       // barChart.xAxis.values(_populationDataList.size, true)
-
+    }
+    //clear old value after finish the search
+    fun clearLists() {
+        //clear lists
+        _cityListItem.clear()
+        _populationDataList.clear()
+        _populationList.clear()
     }
 }
