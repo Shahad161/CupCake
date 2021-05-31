@@ -38,21 +38,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
 // Send Info. of MinCity to frontend
     fun bindCountryMax(country: Model){
-        binding?.apply {
-            countryMax!!.text = ("${country.city}, ${country.country}")
-            populationMax!!.text = ("${country.population} M")
-            longitudeMaxNum!!.text = country.lon.toString()
-            LatitudeMaxNum!!.text = country.lat.toString()
+        binding.apply {
+            countryMax.text = ("${country.city}, ${country.country}")
+            populationMax.text = ("${country.population} M")
+            longitudeMaxNum.text = country.lon.toString()
+            LatitudeMaxNum.text = country.lat.toString()
         }
     }
 
 // Send Info. of MinCity to frontend
     fun bindCountryMin(country: Model){
-        binding?.apply {
-            countryMin!!.text = ("${country.city}, ${country.country}")
-            populationMin!!.text = ("${country.population} M")
-            longitudeMinNum!!.text = country.lon.toString()
-            LatitudeMinNum!!.text = country.lat.toString()
+        binding.apply {
+            countryMin.text = ("${country.city}, ${country.country}")
+            populationMin.text = ("${country.population} M")
+            longitudeMinNum.text = country.lon.toString()
+            LatitudeMinNum.text = country.lat.toString()
 
         }
     }

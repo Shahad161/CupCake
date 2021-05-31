@@ -1,8 +1,10 @@
 package com.example.cupcake.data
 
+import android.util.Log
 import com.example.cupcake.model.Model
 
 object Repository {
+    val Log_tag: String = "test3"
     private val countryList = mutableListOf<Model>()
     private var countryIndex = 0
 
@@ -20,5 +22,15 @@ object Repository {
         val city = countryList.minByOrNull { it.population }
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
+    }
+    fun getCities(countryName: String):Model {
+        var citiesList = countryList.filter { it.country == countryName }
+        val city = citiesList.maxByOrNull { it.population }
+        val maxIndex = citiesList.indexOf(city)
+        log(citiesList[maxIndex])
+        return citiesList[maxIndex]
+    }
+    fun log(value: Any){
+        Log.v(Log_tag, value.toString())
     }
 }

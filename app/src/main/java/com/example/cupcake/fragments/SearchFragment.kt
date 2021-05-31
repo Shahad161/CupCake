@@ -1,7 +1,9 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
+import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
+import com.example.cupcake.model.Model
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
@@ -17,10 +19,23 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
     override fun setUpViews() {
-
-        // set up recycler view and bind data to UI
+        binding.searchbtn.setOnClickListener{
+            search()
+        }
     }
 
+    private fun search(){
+        val countryName = binding.etSearch.text.toString()
+        val dd = Repository.getCities(countryName)
+        bindCountry(dd)
+    }
+
+    fun bindCountry(country: Model){
+        binding.apply {
+            tvCountrySearch.text = ("${country.city}, ${country.country}")
+            tvPopulationSearch.text = ("${country.population} M")
+        }
+    }
     override fun addCallBack() {
         getInfo()
         BarChart()
