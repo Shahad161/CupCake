@@ -7,6 +7,7 @@ import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.ActivityMainBinding
 import com.example.cupcake.fragments.HomeFragment
+import com.example.cupcake.fragments.ModelAdapter
 import com.example.cupcake.util.CsvParser
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
@@ -20,6 +21,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(){
 
     override fun setup() {
         addFragment()
+//        val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
+//        binding?.recycleMain?.adapter = adapter
     }
 
     override fun addCallBack() {

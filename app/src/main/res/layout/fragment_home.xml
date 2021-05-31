@@ -19,203 +19,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="8dp" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_main"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/cardshape"
-        android:elevation="8dp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/countryMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:text="Iraq, Baghdad"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_baseline_people_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/countryMax"
-            app:layout_constraintTop_toBottomOf="@+id/countryMax" />
-
-        <TextView
-            android:id="@+id/populationMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginStart="8dp"
-            android:text="4,856,736 M"
-            android:textColor="@color/smallText"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2" />
-
-
-        <TextView
-            android:id="@+id/tv_longitudeMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="Longitude"
-            android:textColor="@color/smallText"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/longitudeMaxNum"
-            app:layout_constraintTop_toBottomOf="@+id/longitudeMaxNum" />
-
-        <TextView
-            android:id="@+id/longitudeMaxNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:paddingEnd="8dp"
-            android:text="343.5457"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_LatitudeMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="Latitude"
-            android:textColor="@color/smallText"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/LatitudeMaxNum"
-            app:layout_constraintTop_toBottomOf="@+id/LatitudeMaxNum" />
-
-        <TextView
-            android:id="@+id/LatitudeMaxNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingEnd="8dp"
-            android:text="343.5457"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/tv_longitudeMax"
-            app:layout_constraintTop_toBottomOf="@+id/tv_longitudeMax" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/cardshape"
-        android:elevation="8dp"
-        android:padding="16dp"
+        android:layout_height="300dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/countryMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingStart="8dp"
-            android:text="Iraq, Baghdad"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <TextView
-            android:id="@+id/populationMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="4,856,736 M"
-            android:textColor="@color/smallText"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintStart_toEndOf="@+id/imageView" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:src="@drawable/ic_baseline_people_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/countryMin"
-            app:layout_constraintTop_toBottomOf="@+id/countryMin" />
-
-        <TextView
-            android:id="@+id/tv_longitudeMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="Longitude"
-            android:textColor="@color/smallText"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/longitudeMinNum"
-            app:layout_constraintTop_toBottomOf="@+id/longitudeMinNum" />
-
-        <TextView
-            android:id="@+id/longitudeMinNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:paddingEnd="8dp"
-            android:text="343.5457"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_LatitudeMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingEnd="8dp"
-            android:text="Latitude"
-            android:textColor="@color/smallText"
-            android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@+id/LatitudeMinNum"
-            app:layout_constraintTop_toBottomOf="@+id/LatitudeMinNum" />
-
-        <TextView
-            android:id="@+id/LatitudeMinNum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingEnd="8dp"
-            android:text="343.5457"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/longitudeMinNum"
-            app:layout_constraintTop_toBottomOf="@+id/tv_longitudeMin" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.razerdp.widget.animatedpieview.AnimatedPieView
         android:id="@+id/PieChart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/recycle_main"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_toSearch" />

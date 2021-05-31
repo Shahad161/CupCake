@@ -22,40 +22,46 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
+
+            val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
+            binding.recycleMain.adapter = adapter
+
         }
     }
     override fun addCallBack() {
         getCitiesInfo()
         pieChart()
+
+
     }
 
 //call function to get Info from Csv file
     private fun getCitiesInfo(){
         (activity as MainActivity).parseFile()
-        bindCountryMax(Repository.getMaxCity())
-        bindCountryMin(Repository.getMinCity())
+//        bindCountryMax(Repository.getMaxCity())
+//        bindCountryMin(Repository.getMinCity())
     }
 
 // Send Info. of MinCity to frontend
-    fun bindCountryMax(country: Model){
-        binding?.apply {
-            countryMax!!.text = ("${country.city}, ${country.country}")
-            populationMax!!.text = ("${country.population} M")
-            longitudeMaxNum!!.text = country.lon.toString()
-            LatitudeMaxNum!!.text = country.lat.toString()
-        }
-    }
-
-// Send Info. of MinCity to frontend
-    fun bindCountryMin(country: Model){
-        binding?.apply {
-            countryMin!!.text = ("${country.city}, ${country.country}")
-            populationMin!!.text = ("${country.population} M")
-            longitudeMinNum!!.text = country.lon.toString()
-            LatitudeMinNum!!.text = country.lat.toString()
-
-        }
-    }
+//    fun bindCountryMax(country: Model){
+//        binding?.apply {
+//            countryMax!!.text = ("${country.city}, ${country.country}")
+//            populationMax!!.text = ("${country.population} M")
+//            longitudeMaxNum!!.text = country.lon.toString()
+//            LatitudeMaxNum!!.text = country.lat.toString()
+//        }
+//    }
+//
+//// Send Info. of MinCity to frontend
+//    fun bindCountryMin(country: Model){
+//        binding?.apply {
+//            countryMin!!.text = ("${country.city}, ${country.country}")
+//            populationMin!!.text = ("${country.population} M")
+//            longitudeMinNum!!.text = country.lon.toString()
+//            LatitudeMinNum!!.text = country.lat.toString()
+//
+//        }
+//    }
 
 // Display PieChart
     fun pieChart() {
