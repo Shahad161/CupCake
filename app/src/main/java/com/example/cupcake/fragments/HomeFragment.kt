@@ -23,14 +23,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
 
-            val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
-            binding.recycleMain.adapter = adapter
-
         }
     }
     override fun addCallBack() {
         getCitiesInfo()
         pieChart()
+        val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
+        binding.recycleMain.adapter = adapter
 
 
     }
