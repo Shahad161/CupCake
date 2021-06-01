@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/smallSpace"
             android:text="@string/maxpopulation"
-            android:textColor="@color/smallText"
+            android:textColor="@color/lightGray"
             android:textSize="@dimen/textofpopulation"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/imageView2" />
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:paddingEnd="@dimen/smallSpace"
             android:text="@string/latitude"
-            android:textColor="@color/smallText"
+            android:textColor="@color/lightGray"
             android:textSize="@dimen/textsizeoflan_lat"
             app:layout_constraintStart_toStartOf="@+id/LatitudeMaxNum"
             app:layout_constraintTop_toBottomOf="@+id/LatitudeMaxNum" />
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/smallSpace"
             android:text="@string/minpopulation"
-            android:textColor="@color/smallText"
+            android:textColor="@color/lightGray"
             android:textSize="@dimen/textofpopulation"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toEndOf="@+id/imageView" />
@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:paddingEnd="@dimen/smallSpace"
             android:text="@string/longitude"
-            android:textColor="@color/smallText"
+            android:textColor="@color/lightGray"
             android:textSize="@dimen/textsizeoflan_lat"
             app:layout_constraintStart_toStartOf="@+id/longitudeMinNum"
             app:layout_constraintTop_toBottomOf="@+id/longitudeMinNum" />
@@ -177,7 +177,7 @@
             android:layout_height="wrap_content"
             android:paddingEnd="@dimen/smallSpace"
             android:text="@string/latitude"
-            android:textColor="@color/smallText"
+            android:textColor="@color/lightGray"
             android:textSize="@dimen/textsizeoflan_lat"
             app:layout_constraintStart_toStartOf="@+id/LatitudeMinNum"
             app:layout_constraintTop_toBottomOf="@+id/LatitudeMinNum" />

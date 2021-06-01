@@ -10,6 +10,12 @@
     <string name="country">Iraq, Baghdad</string>
     <string name="Search"> Searching....</string>
     <string name="text_lat_lan">343.5457</string>
+    <string name="textcity">City:-</string>
+    <string name="textcountry">Country:-</string>
+    <string name="textcapital">Capital:-</string>
+    <string name="textpopulation">Population:-</string>
+    <string name="textlongitude">Longitude:-</string>
+    <string name="textlatitude">Latitude:-</string>
 
 
 </resources>

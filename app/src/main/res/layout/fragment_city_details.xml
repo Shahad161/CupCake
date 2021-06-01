@@ -1,8 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="@dimen/Elevation"
+    app:cardCornerRadius="@dimen/medalSpace"
+    app:cardBackgroundColor="@color/darkBlue2"
+    android:layout_margin="@dimen/smallSpace">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="346dp"
+            android:layout_height="530dp"
+            android:layout_margin="@dimen/largeSpace"
+            android:background="@drawable/shap_city_details"
+            android:elevation="@dimen/smallSpace"
+            android:padding="@dimen/medalSpace"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.141">
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="@dimen/smallSpace"
+                android:text="Basra"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textofCity"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.186"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/smallSpace"
+                android:paddingStart="@dimen/smallSpace"
+                android:text="Iraq "
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textSize"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/city" />
+
+            <TextView
+                android:id="@+id/capital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/smallSpace"
+                android:paddingStart="@dimen/smallSpace"
+                android:text=" Bagdad "
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textSize"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/country"
+                app:layout_constraintTop_toTopOf="@+id/country" />
+
+            <TextView
+                android:id="@+id/tv_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/smallSpace"
+                android:text="@string/longitude"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textsizeoflan_lat"
+                app:layout_constraintStart_toStartOf="@+id/longitudeNum"
+                app:layout_constraintTop_toBottomOf="@+id/longitudeNum" />
+
+            <TextView
+                android:id="@+id/longitudeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="20dp"
+                android:paddingEnd="@dimen/medalSpace"
+                android:text="@string/text_lat_lan"
+                android:textColor="@color/syan"
+                android:textSize="@dimen/text_size_lat_lan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tv_Latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/smallSpace"
+                android:text="@string/latitude"
+                android:textColor="@color/darkBlue"
+                android:textSize="@dimen/textsizeoflan_lat"
+                app:layout_constraintStart_toStartOf="@+id/LatitudeNum"
+                app:layout_constraintTop_toBottomOf="@+id/LatitudeNum" />
+
+            <TextView
+                android:id="@+id/LatitudeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/smallSpace"
+                android:paddingEnd="@dimen/medalSpace"
+                android:text="@string/text_lat_lan"
+                android:textColor="@color/syan"
+                android:textSize="@dimen/text_size_lat_lan"
+                app:layout_constraintStart_toStartOf="@+id/longitudeNum"
+                app:layout_constraintTop_toBottomOf="@+id/tv_longitude"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/population"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/population"
+                android:textColor="@color/syan"
+                android:textSize="@dimen/verylargeSpace"
+                app:layout_constraintBottom_toTopOf="@+id/erth"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/erth"
+                android:layout_width="379dp"
+                android:layout_height="350dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="232dp"
+                android:src="@drawable/erth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="80dp"
+            android:background="@color/darkBlue"
+            android:src="@drawable/ic_baseline_skip_next_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <ImageButton
+            android:id="@+id/previous"
+            android:background="@color/darkBlue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="80dp"
+            android:src="@drawable/ic_baseline_skip_previous_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other_City"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="@dimen/largeSpace"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="@+id/previous"
+            app:layout_constraintEnd_toStartOf="@+id/next"
+            app:layout_constraintStart_toEndOf="@+id/previous"
+            app:layout_constraintTop_toTopOf="@+id/next" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

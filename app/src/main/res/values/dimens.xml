@@ -10,6 +10,8 @@
     <dimen name="textsizeoflan_lat">10sp</dimen>
     <dimen name="heightofConstraint">150dp</dimen>
     <dimen name="heightofAnimation">210dp</dimen>
+    <dimen name="heightofCity">60dp</dimen>
+    <dimen name="textofCity">35sp</dimen>
     <dimen name="Elevation">5dp</dimen>
     <dimen name="text_size_lat_lan">14sp</dimen>
 
