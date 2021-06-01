@@ -30,10 +30,7 @@ class ModelAdapter(val list: List<Model>): RecyclerView.Adapter<ModelAdapter.mod
         }
 
     }
-
     override fun getItemCount() =list.size
-
-
 
     class modelViewHolders(viewItem: View): RecyclerView.ViewHolder(viewItem) {
         val binding = ItemModelBinding.bind(viewItem)
