@@ -37,10 +37,6 @@ class ModelAdapter(val list: List<Model>): RecyclerView.Adapter<ModelAdapter.mod
 
     class modelViewHolders(viewItem: View): RecyclerView.ViewHolder(viewItem) {
         val binding = ItemModelBinding.bind(viewItem)
-//    val textCountryName: TextView = viewItem.findViewById(R.id.countryMax) // delete after check
-//    val textPop: TextView = viewItem.findViewById(R.id.populationMax)
-//    val textLong: TextView = viewItem.findViewById(R.id.longitudeMaxNum)
-//    val textlat: TextView = viewItem.findViewById(R.id.LatitudeMaxNum)
     }
 
 }
