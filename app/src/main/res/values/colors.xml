@@ -4,13 +4,15 @@
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FFEB3B</color>
     <color name="gray">#141414</color>
-    <color name="gray2">#0D1122</color>
-    <color name="gray3">#242629</color>
+    <color name="darkBlue2">#0D1122</color>
+    <color name="gray2">#242629</color>
     <color name="darkBlue">#161A31</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="offwhite">#EAE6E6</color>
-    <color name="smallText">#616A94</color>
+    <color name="lightGray">#616A94</color>
     <color name="splash_background">#0f1023</color>
+    <color name="syan">#E45E6480</color>
+
 
 </resources>

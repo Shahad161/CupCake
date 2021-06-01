@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray2"
-    android:padding="16dp"
+    android:background="@color/darkBlue2"
+    android:padding="@dimen/medalSpace"
     tools:context=".fragments.SearchFragment"
     app:layoutDescription="@xml/activity_search_scene">
 
@@ -14,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/cardshape"
-        android:hint="Searching...."
-        android:padding="16dp"
+        android:hint="@string/Search"
+        android:padding="@dimen/medalSpace"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +28,7 @@
         android:id="@+id/searchbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/medalSpace"
         android:background="@color/darkBlue"
         android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintBottom_toBottomOf="@+id/et_search"
@@ -36,31 +37,30 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation = "5dp"
+        android:layout_width="@dimen/zeroSpace"
+        android:layout_height="@dimen/zeroSpace"
+        app:cardCornerRadius="@dimen/largeSpace"
+        app:cardElevation = "@dimen/Elevation"
         app:cardBackgroundColor = "@color/darkBlue"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="@dimen/largeSpace"
         app:layout_constraintTop_toBottomOf="@+id/et_search"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="@dimen/heightofConstraint"
             android:background="@drawable/cardshape"
             app:layout_constraintBottom_toBottomOf="@+id/et_search"
             app:layout_constraintEnd_toEndOf="@+id/et_search"
-            app:layout_constraintStart_toStartOf="@+id/et_search"
-            app:layout_editor_absoluteY="176dp">
+            app:layout_constraintStart_toStartOf="@+id/et_search">
 
             <TextView
                 android:id="@+id/tv_countrySearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Iraq, Baghdad"
+                android:text="@string/country"
                 android:textColor="@color/white"
-                android:textSize="30sp"
+                android:textSize="@dimen/textSize"
                 app:layout_constraintBottom_toTopOf="@+id/imageView2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -71,18 +71,19 @@
                 android:id="@+id/tv_populationSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="4,433,453 M"
-                android:textColor="@color/smallText"
-                android:textSize="16dp"
+                android:layout_marginStart="@dimen/smallSpace"
+                android:text="@string/population"
+                android:textColor="@color/lightGray"
+                android:textSize="@dimen/medalSpace"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                app:layout_constraintStart_toEndOf="@+id/imageView2" />
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                tools:ignore="SpUsage" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="@dimen/verylargeSpace"
                 android:src="@drawable/ic_baseline_people_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_countrySearch"
@@ -96,7 +97,7 @@
         android:id="@+id/barChart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/medalSpace"
         app:layout_constraintTop_toBottomOf="@id/et_search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
