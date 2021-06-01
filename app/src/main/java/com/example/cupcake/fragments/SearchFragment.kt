@@ -113,4 +113,5 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         _populationDataList.clear()
         _populationList.clear()
     }
+
 }

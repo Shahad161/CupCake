@@ -21,9 +21,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         // Open search fragment when you click on ImageButton in frontend
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-            transaction.add(R.id.fragment_container, SearchFragment()).commit()
+            transaction.replace(R.id.fragment_container, SearchFragment()).addToBackStack(null).commit()
         }
     }
+
     override fun addCallBack() {
         getCitiesInfo()
         pieChart()
