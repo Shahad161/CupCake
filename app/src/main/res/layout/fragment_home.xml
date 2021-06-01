@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:background="@color/gray2"
-    tools:context=".ui.HomeActivity">
+    tools:context=".fragments.HomeFragment">
 
     <ImageButton
         android:id="@+id/btn_toSearch"
