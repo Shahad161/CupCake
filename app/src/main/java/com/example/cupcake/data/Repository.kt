@@ -23,12 +23,16 @@ object Repository {
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
     }
-    fun getCities(countryName: String):Model {
+    fun getCities(countryName: String):Model? {
         var citiesList = countryList.filter { it.country == countryName }
-        val city = citiesList.maxByOrNull { it.population }
-        val maxIndex = citiesList.indexOf(city)
-        log(citiesList[maxIndex])
-        return citiesList[maxIndex]
+        if (citiesList==null){
+            return null
+        }else {
+            val city = citiesList.maxByOrNull { it.population }
+            val maxIndex = citiesList.indexOf(city)
+            //      log(citiesList[maxIndex])
+            return citiesList[maxIndex]
+        }
     }
     fun log(value: Any){
         Log.v(Log_tag, value.toString())

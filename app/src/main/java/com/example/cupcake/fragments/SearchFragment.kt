@@ -28,14 +28,25 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
-            search()
+            val countryName = binding.etSearch.text.toString()
+            val countryDetails = Repository.getCities(countryName)
 
+            if (countryName==""){
+                Toast.makeText(getActivity(), "Country not found", Toast.LENGTH_LONG).show()
+            }else if (countryDetails== null){
+                Toast.makeText(getActivity(), "Country not found", Toast.LENGTH_LONG).show()
+
+            }else {
+
+                bindCountry(countryDetails)
+                search()
+            }
         }
     }
 
     private fun search(){
         val countryName = binding.etSearch.text.toString()
-        val dd = Repository.getCities(countryName)
+
         _cityList = Repository.getCityList()
 
         val citiesOfCountry = _cityList.filter {
@@ -46,7 +57,6 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             _populationList.add(it.population.toString())
         }
 
-        bindCountry(dd)
         getPopulation()
 
     }
