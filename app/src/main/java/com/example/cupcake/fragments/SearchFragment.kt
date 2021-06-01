@@ -1,7 +1,7 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
-import android.util.Log
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
@@ -12,6 +12,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
+
 
 class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
@@ -27,13 +28,17 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
+
             clearLists()
-            search()
+            countrySearch()
+            //hide keyboard
+            binding.etSearch.onEditorAction(EditorInfo.IME_ACTION_DONE)
+
         }
     }
 
     //Searching for a specific country
-    private fun search(){
+    private fun countrySearch(){
         var countryName = binding.etSearch.text.toString()
         if(countryName == ""){
             return Toast.makeText(activity, "Enter Country Name you want to search about.", Toast.LENGTH_LONG).show()
@@ -72,12 +77,12 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
                 _populationDataList.add(BarEntry(_populationList[i].toFloat(), i))
                 Toast.makeText(activity, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT).show() }
         }
-        BarChart()
+        addBarChart()
     }
 
 
 // draw BarChart
-    private fun BarChart(){
+    private fun addBarChart(){
         val barChart: BarChart = binding.barChart
         barDataSet = BarDataSet(_populationDataList, "Population")
         barData = BarData(_cityListItem,barDataSet)
@@ -85,7 +90,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14f
-        barChart.animateXY(2000,2000)
+        barChart.animateXY(500,500)
         barChart.setVisibleXRangeMaximum(5f)
         barChart.xAxis.textColor = Color.WHITE
         barChart.axisRight.textColor = Color.WHITE

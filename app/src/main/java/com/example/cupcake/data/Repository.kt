@@ -25,15 +25,17 @@ object Repository {
 
 //Get City For a specific country
     fun getMaxCityOfCountry(countryName: String):Model {
-        val citiesList = countryList.filter { it.country == countryName }
-        val city = citiesList.maxByOrNull { it.population }
+        val citiesList = countryList.filter {
+            it.country.equals(countryName, ignoreCase = true)
+        }
+    val city = citiesList.maxByOrNull { it.population }
         val maxIndex = citiesList.indexOf(city)
         return citiesList[maxIndex]
     }
 
 //Get All Cities For a specific country
-    fun getAllCities(countryName: String): List<Model> {
-        val citiesList = countryList.filter { it.country == countryName }
-        return citiesList
+fun getAllCities(countryName: String): List<Model> {
+    val citiesList = countryList.filter {it.country.equals(countryName, ignoreCase = true)}
+    return citiesList
     }
 }
