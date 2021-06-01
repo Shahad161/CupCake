@@ -3,7 +3,7 @@ package com.example.cupcake.data
 import com.example.cupcake.model.Model
 
 object Repository {
-    private val countryList = mutableListOf<Model>()
+    val countryList = mutableListOf<Model>()
     private var countryIndex = 0
 
     fun addCountry(country: Model){

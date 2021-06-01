@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/splash_background">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/cardshape"
+        android:elevation="8dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="18dp">
+
+        <TextView
+            android:id="@+id/countryMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Iraq, Baghdad"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:lines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_baseline_people_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/countryMax"
+            app:layout_constraintTop_toBottomOf="@+id/countryMax" />
+
+        <TextView
+            android:id="@+id/populationMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="4,856,736 M"
+            android:textColor="@color/lightGray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2" />
+
+
+        <TextView
+            android:id="@+id/tv_longitudeMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:text="Longitude"
+            android:textColor="@color/lightGray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/longitudeMaxNum"
+            app:layout_constraintTop_toBottomOf="@+id/longitudeMaxNum" />
+
+        <TextView
+            android:id="@+id/longitudeMaxNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingEnd="8dp"
+            android:text="343.5457"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_LatitudeMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="8dp"
+            android:text="Latitude"
+            android:textColor="@color/lightGray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/LatitudeMaxNum"
+            app:layout_constraintTop_toBottomOf="@+id/LatitudeMaxNum" />
+        <TextView
+            android:id="@+id/LatitudeMaxNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:paddingEnd="8dp"
+            android:text="343.5457"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_longitudeMax"
+            app:layout_constraintTop_toBottomOf="@+id/tv_longitudeMax" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
