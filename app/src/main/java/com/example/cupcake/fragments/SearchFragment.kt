@@ -19,7 +19,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     lateinit var barDataSet: BarDataSet
     lateinit var barList: ArrayList<BarEntry>
     lateinit var county: ArrayList<String>
-    private var _cityList: MutableList<Model> = mutableListOf<Model>()
+    private var _cityList: MutableList<Model> = mutableListOf()
     private var _cityListItem = arrayListOf<String>()
     private var _populationList = mutableListOf<String>()
     private val _populationDataList = arrayListOf<BarEntry>()
@@ -28,73 +28,60 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
-            val countryName = binding.etSearch.text.toString()
-            val countryDetails = Repository.getCities(countryName)
-
-            if (countryName==""){
-                Toast.makeText(getActivity(), "Country not found", Toast.LENGTH_LONG).show()
-            }else if (countryDetails== null){
-                Toast.makeText(getActivity(), "Country not found", Toast.LENGTH_LONG).show()
-
-            }else {
-
-                bindCountry(countryDetails)
-                search()
-            }
+            search()
         }
     }
 
+    //Searching for a specific country
     private fun search(){
-        val countryName = binding.etSearch.text.toString()
-
-        _cityList = Repository.getCityList()
-
-        val citiesOfCountry = _cityList.filter {
-            it.country == countryName
+        var countryName = binding.etSearch.text.toString()
+        if(countryName == ""){
+            return Toast.makeText(activity, "Enter Country Name you want to search about.", Toast.LENGTH_LONG).show()
         }
-        citiesOfCountry.forEach {
+        _cityList = Repository.getAllCities(countryName).toMutableList()
+        if(_cityList.size == 0){
+            return Toast.makeText(activity, "Country not found", Toast.LENGTH_LONG).show()
+        }
+        _cityList.forEach {
             _cityListItem.add(it.city)
             _populationList.add(it.population.toString())
         }
-
+        bindCountry(Repository.getMaxCityOfCountry(countryName))
         getPopulation()
-
     }
 
-    fun bindCountry(country: Model){
+    // display the search result
+    private fun bindCountry(country: Model){
         binding.apply {
             tvCountrySearch.text = ("${country.city}, ${country.country}")
             tvPopulationSearch.text = ("${country.population} M")
         }
     }
-    override fun addCallBack() {
 
+    override fun addCallBack() {
     }
     //get all population for cities in some country
-    fun getPopulation() {
+    private fun getPopulation() {
         // solve the wasted data in population
         for (i in 0 until _cityListItem.size) {
             if (_populationList[i].trim().isNotEmpty()) {
-                _populationDataList.add(BarEntry(_populationList[i].toFloat(),i))
-            } else {
+                _populationDataList.add(BarEntry(_populationList[i].toFloat(),i)) }
+
+            else {
                 _populationList[i] = "0"
                 _populationDataList.add(BarEntry(_populationList[i].toFloat(), i))
-//                Toast.makeText(this, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT)
-//                    .show()
-            }
-
+                Toast.makeText(activity, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT).show() }
         }
         BarChart()
     }
 
 
-    fun BarChart(){
-//        Log.i("mmmm", _cityListItem.toString())
-
+// draw BarChart
+    private fun BarChart(){
         val barChart: BarChart = binding.barChart
         barDataSet = BarDataSet(_populationDataList, "Population")
         barData = BarData(_cityListItem,barDataSet)
-        binding!!.barChart.data = barData
+        binding.barChart.data = barData
         barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14f
@@ -109,14 +96,13 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val rightYAxis: YAxis = binding.barChart.axisRight
         rightYAxis.isEnabled = false
         rightYAxis.setDrawGridLines(false)
-
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
-
     }
+
     //clear old value after finish the search
-    fun clearLists() {
+    private fun clearLists() {
         //clear lists
         _cityListItem.clear()
         _populationDataList.clear()

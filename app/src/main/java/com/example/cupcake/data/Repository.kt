@@ -1,17 +1,16 @@
 package com.example.cupcake.data
 
-import android.util.Log
 import com.example.cupcake.model.Model
 
 object Repository {
-    val Log_tag: String = "test3"
     private val countryList = mutableListOf<Model>()
     private var countryIndex = 0
 
     fun addCountry(country: Model){
         countryList.add(country)
     }
-    fun getCityList() : MutableList<Model> = countryList
+
+    fun getCountryList() : MutableList<Model> = countryList
     fun getCurrentCity(): Model = countryList[countryIndex]
     fun getMaxCity():Model {
         val city = countryList.maxByOrNull { it.population }
@@ -23,18 +22,18 @@ object Repository {
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
     }
-    fun getCities(countryName: String):Model? {
-        var citiesList = countryList.filter { it.country == countryName }
-        if (citiesList==null){
-            return null
-        }else {
-            val city = citiesList.maxByOrNull { it.population }
-            val maxIndex = citiesList.indexOf(city)
-            //      log(citiesList[maxIndex])
-            return citiesList[maxIndex]
-        }
+
+//Get City For a specific country
+    fun getMaxCityOfCountry(countryName: String):Model {
+        val citiesList = countryList.filter { it.country == countryName }
+        val city = citiesList.maxByOrNull { it.population }
+        val maxIndex = citiesList.indexOf(city)
+        return citiesList[maxIndex]
     }
-    fun log(value: Any){
-        Log.v(Log_tag, value.toString())
+
+//Get All Cities For a specific country
+    fun getAllCities(countryName: String): List<Model> {
+        val citiesList = countryList.filter { it.country == countryName }
+        return citiesList
     }
 }
