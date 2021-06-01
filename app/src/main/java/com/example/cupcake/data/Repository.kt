@@ -3,14 +3,14 @@ package com.example.cupcake.data
 import com.example.cupcake.model.Model
 
 object Repository {
-    val countryList = mutableListOf<Model>()
+    val countryList: MutableList<Model> = mutableListOf<Model>()
     private var countryIndex = 0
 
     fun addCountry(country: Model){
         countryList.add(country)
     }
 
-    fun getCountryList() : MutableList<Model> = countryList
+    fun getCityList() : MutableList<Model> = countryList
     fun getCurrentCity(): Model = countryList[countryIndex]
     fun getMaxCity():Model {
         val city = countryList.maxByOrNull { it.population }

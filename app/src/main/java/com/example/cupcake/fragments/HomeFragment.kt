@@ -30,7 +30,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
         binding.recycleMain.adapter = adapter
 
-
     }
 
 //call function to get Info from Csv file

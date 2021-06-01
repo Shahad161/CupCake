@@ -34,7 +34,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
     //Searching for a specific country
     private fun search(){
-        var countryName = binding.etSearch.text.toString()
+        val countryName = binding.etSearch.text.toString()
         if(countryName == ""){
             return Toast.makeText(activity, "Enter Country Name you want to search about.", Toast.LENGTH_LONG).show()
         }
