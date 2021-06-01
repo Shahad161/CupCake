@@ -1,19 +1,24 @@
 package com.example.cupcake.fragments
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
 import com.example.cupcake.ui.MainActivity
+import com.example.cupcake.ui.ModelInteractionListner
+import com.example.cupcake.util.Constant
 import com.razerdp.widget.animatedpieview.AnimatedPieView
 import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
 import com.razerdp.widget.animatedpieview.data.SimplePieInfo
 
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListner {
     override fun getViewBinding() = FragmentHomeBinding.inflate(layoutInflater)
     @SuppressLint("UseRequireInsteadOfGet")
 
@@ -23,11 +28,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
         }
+
     }
     override fun addCallBack() {
         getCitiesInfo()
         pieChart()
-        val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
+        val adapter = ModelAdapter(Repository.countryList, this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
 
     }
@@ -74,4 +80,18 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         mAnimatedPieView?.applyConfig(config)
         mAnimatedPieView?.start()
     }
+
+    override fun OnClickItem(model: Model) {
+        val myIntent = Intent(context,CityDetailsFragment::class.java)
+        myIntent.putExtra(Constant.key.Model, model)
+        startActivity(myIntent)
+    }
+
+    override fun OnClickCountry(name: String) {
+        Toast.makeText(context, name, Toast.LENGTH_SHORT).show()
+    }
+}
+
+private fun Intent.putExtra(model: String, model1: Model) {
+
 }
