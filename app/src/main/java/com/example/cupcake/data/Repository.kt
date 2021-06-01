@@ -9,7 +9,8 @@ object Repository {
     fun addCountry(country: Model){
         countryList.add(country)
     }
-    fun getCityList() : MutableList<Model> = countryList
+
+    fun getCountryList() : MutableList<Model> = countryList
     fun getCurrentCity(): Model = countryList[countryIndex]
     fun getMaxCity():Model {
         val city = countryList.maxByOrNull { it.population }
@@ -20,5 +21,19 @@ object Repository {
         val city = countryList.minByOrNull { it.population }
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
+    }
+
+//Get City For a specific country
+    fun getMaxCityOfCountry(countryName: String):Model {
+        val citiesList = countryList.filter { it.country == countryName }
+        val city = citiesList.maxByOrNull { it.population }
+        val maxIndex = citiesList.indexOf(city)
+        return citiesList[maxIndex]
+    }
+
+//Get All Cities For a specific country
+    fun getAllCities(countryName: String): List<Model> {
+        val citiesList = countryList.filter { it.country == countryName }
+        return citiesList
     }
 }
