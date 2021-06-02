@@ -2,7 +2,10 @@ package com.example.cupcake.fragments
 
 import android.graphics.Color
 import android.util.Log
+import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.core.view.LayoutInflaterCompat
+import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
 import com.example.cupcake.model.Model
@@ -12,6 +15,7 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.utils.ColorTemplate
+import com.google.android.material.chip.Chip
 
 class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
@@ -30,7 +34,28 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             clearLists()
             search()
         }
+        binding.chipbtn.setOnClickListener{
+            addchip()
+        }
     }
+
+    //Convert any text input in Edit_text to chip
+    private fun addchip() {
+        val text_array =
+            binding.etSearch.text!!.toString().split(" ".toRegex()).dropLastWhile { it.isEmpty() }
+                .toTypedArray()
+        val inflater = LayoutInflater.from(this)
+        for (Text in text_array) {
+            val chip_item = inflater.inflate(R.layout.chip_item, null, false) as Chip
+            chip_item.apply {
+                text = Text
+                setOnCloseIconClickListener { view -> binding.chipGroup.removeView(view) }
+            }
+            binding.chipGroup.addView(chip_item)
+
+        }
+    }
+
 
     //Searching for a specific country
     private fun search(){
