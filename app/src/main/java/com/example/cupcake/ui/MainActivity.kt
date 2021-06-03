@@ -20,8 +20,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
 
     override fun setup() {
         addFragment(HomeFragment())
-//        val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
-//        binding?.recycleMain?.adapter = adapter
     }
 
     override fun addCallBack() {

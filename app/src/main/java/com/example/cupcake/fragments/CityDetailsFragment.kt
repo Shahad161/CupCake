@@ -21,9 +21,9 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
     }
     private fun bindModel(model: Model) {
         binding.apply {
-            country.text = model.country
+            country.text = model.abbreviation
             city.text = model.city
-            population.text = model.population.toString()
+            population.text = model.populationCity.toString()
             LatitudeNum.text = model.lat.toString()
             longitudeNum.text = model.lon.toString()
         }

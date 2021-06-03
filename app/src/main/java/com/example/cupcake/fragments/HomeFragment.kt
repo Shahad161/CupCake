@@ -27,7 +27,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
     }
     override fun addCallBack() {
         getCitiesInfo()
-        pieChart()
         val adapter = ModelAdapter(Repository.countryList, this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
 
@@ -36,44 +35,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
 //call function to get Info from Csv file
     private fun getCitiesInfo(){
         (activity as MainActivity).parseFile()
-//        bindCountryMax(Repository.getMaxCity())
-//        bindCountryMin(Repository.getMinCity())
-    }
-
-// Send Info. of MinCity to frontend
-//    fun bindCountryMax(country: Model){
-//        binding?.apply {
-//            countryMax!!.text = ("${country.city}, ${country.country}")
-//            populationMax!!.text = ("${country.population} M")
-//            longitudeMaxNum!!.text = country.lon.toString()
-//            LatitudeMaxNum!!.text = country.lat.toString()
-//        }
-//    }
-//
-//// Send Info. of MinCity to frontend
-//    fun bindCountryMin(country: Model){
-//        binding?.apply {
-//            countryMin!!.text = ("${country.city}, ${country.country}")
-//            populationMin!!.text = ("${country.population} M")
-//            longitudeMinNum!!.text = country.lon.toString()
-//            LatitudeMinNum!!.text = country.lat.toString()
-//
-//        }
-//    }
-
-// Display PieChart
-    fun pieChart() {
-        val mAnimatedPieView: AnimatedPieView? = binding.PieChart
-        val config = AnimatedPieViewConfig()
-        config.startAngle(-90f)
-            .addData(SimplePieInfo(30.0, Color.parseColor("#386CBA"), "Baghdad"))
-            .addData(SimplePieInfo(18.0, Color.parseColor("#FFEECA"), "London"))
-            .addData(SimplePieInfo(10.0, Color.parseColor("#A6ABBD"), "Paris"))
-            .addData(SimplePieInfo(20.0, Color.parseColor("#B44760"), "Dubai"))
-            .addData(SimplePieInfo(10.0, Color.parseColor("#F07C92"), "Cairo"))
-            .drawText(true).textSize(30.0F).duration(2000)
-        mAnimatedPieView?.applyConfig(config)
-        mAnimatedPieView?.start()
     }
 
     override fun OnClickItem(model: Model) {

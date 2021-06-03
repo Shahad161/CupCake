@@ -4,11 +4,11 @@ object Constant {
     object ColumnIndex{
         const val CITY = 1
         const val COUNTRY = 4
-        const val POPULATION = 10
-        const val LON = 2
-        const val LAT =3
-        const val CAPITAL = 7
-
+        const val POPULATIONCITY = 9
+        const val POPULATIONCOUNTRY = 10
+        const val ABBREVIATION = 6
+        const val LON = 3
+        const val LAT = 2
     }
     object key {
         const val Model = "model"

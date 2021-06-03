@@ -43,7 +43,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         }
         _cityList.forEach {
             _cityListItem.add(it.city)
-            _populationList.add(it.population.toString())
+            _populationList.add(it.populationCity.toString())
         }
         bindCountry(Repository.getMaxCityOfCountry(countryName))
         getPopulation()
@@ -53,7 +53,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private fun bindCountry(country: Model){
         binding.apply {
             tvCountrySearch.text = ("${country.city}, ${country.country}")
-            tvPopulationSearch.text = ("${country.population} M")
+            tvPopulationSearch.text = ("${country.populationCity} M")
         }
     }
 

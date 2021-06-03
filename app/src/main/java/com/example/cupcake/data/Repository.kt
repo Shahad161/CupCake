@@ -13,12 +13,12 @@ object Repository {
     fun getCityList() : MutableList<Model> = countryList
     fun getCurrentCity(): Model = countryList[countryIndex]
     fun getMaxCity():Model {
-        val city = countryList.maxByOrNull { it.population }
+        val city = countryList.maxByOrNull { it.populationCity }
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
     }
     fun getMinCity():Model {
-        val city = countryList.minByOrNull { it.population }
+        val city = countryList.minByOrNull { it.populationCity }
         val maxIndex = countryList.indexOf(city)
         return countryList[maxIndex]
     }
@@ -26,7 +26,7 @@ object Repository {
 //Get City For a specific country
     fun getMaxCityOfCountry(countryName: String):Model {
         val citiesList = countryList.filter { it.country == countryName }
-        val city = citiesList.maxByOrNull { it.population }
+        val city = citiesList.maxByOrNull { it.populationCity }
         val maxIndex = citiesList.indexOf(city)
         return citiesList[maxIndex]
     }

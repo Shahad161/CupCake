@@ -8,8 +8,9 @@ import android.os.Parcelable
 data class Model(
     val city: String,
     val country: String,
-    val population: Int,
-    val capital: String,
+    val abbreviation: String,
+    val populationCountry: Int,
+    val populationCity: String,
     val lat: Double,
     val lon: Double
 ) : Parcelable {

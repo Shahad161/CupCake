@@ -9,8 +9,9 @@ class CsvParser {
         return Model(
             city = tokens[Constant.ColumnIndex.CITY],
             country   = tokens[Constant.ColumnIndex.COUNTRY],
-            capital  = tokens[Constant.ColumnIndex.CAPITAL],
-            population  = tokens[Constant.ColumnIndex.POPULATION].toInt(),
+            abbreviation = tokens[Constant.ColumnIndex.ABBREVIATION],
+            populationCountry = tokens[Constant.ColumnIndex.POPULATIONCOUNTRY].toInt(),
+            populationCity  = tokens[Constant.ColumnIndex.POPULATIONCITY].toString(),
             lat = tokens[Constant.ColumnIndex.LAT].toDouble(),
             lon = tokens[Constant.ColumnIndex.LON].toDouble()
         )
