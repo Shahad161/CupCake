@@ -20,7 +20,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         // Open search fragment when you click on ImageButton in frontend
         passData = activity as ModelInteractionListner
         binding.btnToSearch.setOnClickListener {
-            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
         }
     }

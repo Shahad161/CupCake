@@ -39,7 +39,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
         }
         binding.back.setOnClickListener {
-            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, HomeFragment()).commit()
         }
     }
@@ -57,7 +57,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         }
         _cityList.filter { it.cityType == Constant.key.ADMIN || it.cityType == Constant.key.PRIMARY }.forEach {
             _cityListItem.add(it.city)
-            _populationList.add(it.populationCity)
+            _populationList.add(it.populationCity.toString())
         }
         bindCountry(Repository.getMaxCityOfCountry(countryName))
         binding.image.isVisible = false
@@ -118,6 +118,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
+        binding.barChart.xAxis.setDrawLabels(true)
+  //  binding.barChart.xAxis.setValueFormatter()
     }
 
     //clear old value after finish the search

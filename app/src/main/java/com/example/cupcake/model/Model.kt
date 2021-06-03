@@ -9,8 +9,7 @@ data class Model(
     val city: String,
     val country: String,
     val abbreviation: String,
-    val populationCountry: Int,
-    val populationCity: String,
+    val populationCity: Int,
     val lat: Double,
     val lon: Double,
     val cityType : String

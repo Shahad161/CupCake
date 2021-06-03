@@ -10,8 +10,7 @@ class CsvParser {
             city = tokens[Constant.ColumnIndex.CITY],
             country   = tokens[Constant.ColumnIndex.COUNTRY],
             abbreviation = tokens[Constant.ColumnIndex.ABBREVIATION],
-            populationCountry = tokens[Constant.ColumnIndex.POPULATIONCOUNTRY].toInt(),
-            populationCity  = tokens[Constant.ColumnIndex.POPULATIONCITY].toString(),
+            populationCity  = if (tokens[Constant.ColumnIndex.POPULATIONCITY].isNotEmpty()) tokens[Constant.ColumnIndex.POPULATIONCITY].toDouble().toInt() else 0 ,
             lat = tokens[Constant.ColumnIndex.LAT].toDouble(),
             lon = tokens[Constant.ColumnIndex.LON].toDouble(),
             cityType = tokens[Constant.ColumnIndex.CITY_TYPE]
