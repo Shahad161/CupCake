@@ -26,7 +26,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
     }
     override fun addCallBack() {
         getCitiesInfo()
-        val adapter = ModelAdapter(Repository.countryList.sortedBy { it.populationCity }.reversed(), this) // list of cities to adapter
+        val adapter = ModelAdapter(Repository.getCountryList().sortedBy { it.populationCity }.reversed(), this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
     }
 

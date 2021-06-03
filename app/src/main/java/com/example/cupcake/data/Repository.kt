@@ -3,17 +3,14 @@ package com.example.cupcake.data
 import com.example.cupcake.model.Model
 
 object Repository {
-    val countryList: MutableList<Model> = mutableListOf<Model>()
-    var citiesList: MutableList<Model> = mutableListOf<Model>()
-
-    var Log_tag:String = "test"
+    private val countryList = mutableListOf<Model>()
     private var countryIndex = 0
 
     fun addCountry(country: Model){
         countryList.add(country)
     }
 
-    fun getCityList() : MutableList<Model> = countryList
+    fun getCountryList() : MutableList<Model> = countryList
     fun getCurrentCity(): Model = countryList[countryIndex]
     fun getMaxCity():Model {
         val city = countryList.maxByOrNull { it.populationCity }
@@ -26,17 +23,19 @@ object Repository {
         return countryList[maxIndex]
     }
 
-//Get City For a specific country
-fun getMaxCityOfCountry(countryName: String):Model {
-    citiesList = countryList.filter { it.country == countryName }.toMutableList()
-    val city = citiesList.maxByOrNull { it.populationCity }
-    val maxIndex = citiesList.indexOf(city)
-    return citiesList[maxIndex]
-}
+    //Get City For a specific country
+    fun getMaxCityOfCountry(countryName: String):Model {
+        val citiesList = countryList.filter {
+            it.country.equals(countryName, ignoreCase = true)
+        }
+        val city = citiesList.maxByOrNull { it.populationCity }
+        val maxIndex = citiesList.indexOf(city)
+        return citiesList[maxIndex]
+    }
 
-//Get All Cities For a specific country
+    //Get All Cities For a specific country
     fun getAllCities(countryName: String): List<Model> {
-        val citiesList = countryList.filter { it.country == countryName }
+        val citiesList = countryList.filter {it.country.equals(countryName, ignoreCase = true)}
         return citiesList
     }
 }
