@@ -12,7 +12,8 @@ data class Model(
     val populationCountry: Int,
     val populationCity: String,
     val lat: Double,
-    val lon: Double
+    val lon: Double,
+    val cityType : String
 ) : Parcelable {
     override fun describeContents(): Int {
         TODO("Not yet implemented")

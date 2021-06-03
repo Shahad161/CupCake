@@ -9,9 +9,13 @@ object Constant {
         const val ABBREVIATION = 6
         const val LON = 3
         const val LAT = 2
+        const val CITY_TYPE =8
+
     }
     object key {
         const val Model = "model"
+        const val ADMIN = "admin"
+        const val PRIMARY = "primary"
     }
 }
 

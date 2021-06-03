@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
 import com.example.cupcake.model.Model
+import com.example.cupcake.util.Constant
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
@@ -45,7 +46,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         if(_cityList.size == 0){
             return Toast.makeText(activity, "Country not found", Toast.LENGTH_LONG).show()
         }
-        _cityList.forEach {
+        _cityList.filter { it.cityType == Constant.key.ADMIN || it.cityType == Constant.key.PRIMARY }.forEach {
             _cityListItem.add(it.city)
             _populationList.add(it.populationCity.toString())
         }
