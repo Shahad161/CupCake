@@ -1,7 +1,6 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
-import android.util.Log
 import android.widget.Toast
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding

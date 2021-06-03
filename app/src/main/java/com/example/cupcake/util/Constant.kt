@@ -1,7 +1,5 @@
 package com.example.cupcake.util
 
-import com.example.cupcake.model.Model
-
 object Constant {
     object ColumnIndex{
         const val CITY = 1
