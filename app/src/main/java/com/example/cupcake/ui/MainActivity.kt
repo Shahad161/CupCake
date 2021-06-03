@@ -29,7 +29,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
     private fun addFragment(fragment: Fragment){
     val transaction = supportFragmentManager.beginTransaction()
     transaction.add(R.id.fragment_container, fragment).commit()
-
     }
 
 // read data from Csv file
