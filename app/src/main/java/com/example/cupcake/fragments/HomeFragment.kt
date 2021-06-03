@@ -29,11 +29,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
         }
 
+
     }
     override fun addCallBack() {
         getCitiesInfo()
         pieChart()
-        val adapter = ModelAdapter(Repository.countryList, this) // list of cities to adapter
+        val adapter = ModelAdapter(Repository.countryList.sortedBy { it.population }.reversed(), this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
 
     }
@@ -85,6 +86,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         val myIntent = Intent(context,CityDetailsFragment::class.java)
         myIntent.putExtra(Constant.key.Model, model)
         startActivity(myIntent)
+
+
     }
 
     override fun OnClickCountry(name: String) {

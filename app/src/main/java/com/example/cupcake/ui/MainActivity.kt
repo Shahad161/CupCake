@@ -23,6 +23,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(){
         addFragment()
 //        val adapter = ModelAdapter(Repository.countryList) // list of cities to adapter
 //        binding?.recycleMain?.adapter = adapter
+
+
     }
 
     override fun addCallBack() {
