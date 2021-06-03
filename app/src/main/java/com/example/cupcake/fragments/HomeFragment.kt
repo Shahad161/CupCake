@@ -1,7 +1,6 @@
 package com.example.cupcake.fragments
 
-import android.annotation.SuppressLint
-import android.graphics.Color
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -9,10 +8,6 @@ import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
 import com.example.cupcake.ui.MainActivity
 import com.example.cupcake.ui.ModelInteractionListner
-import com.razerdp.widget.animatedpieview.AnimatedPieView
-import com.razerdp.widget.animatedpieview.AnimatedPieViewConfig
-import com.razerdp.widget.animatedpieview.data.SimplePieInfo
-
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListner {
     private lateinit var passData: ModelInteractionListner
@@ -22,7 +17,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         passData = activity as ModelInteractionListner
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-            transaction.replace(R.id.fragment_container, SearchFragment()).commit()
             transaction.replace(R.id.fragment_container, SearchFragment()).addToBackStack(null).commit()
         }
     }
@@ -30,7 +24,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         getCitiesInfo()
         val adapter = ModelAdapter(Repository.countryList, this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
-
     }
 
 //call function to get Info from Csv file

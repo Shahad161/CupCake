@@ -1,6 +1,7 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
@@ -27,7 +28,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
-            countrySearch()
+            search()
             //hide keyboard
             binding.etSearch.onEditorAction(EditorInfo.IME_ACTION_DONE)
 
