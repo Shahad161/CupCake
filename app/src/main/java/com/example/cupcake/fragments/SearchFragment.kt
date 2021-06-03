@@ -2,6 +2,10 @@ package com.example.cupcake.fragments
 
 import android.graphics.Color
 import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentSearchBinding
 import com.example.cupcake.model.Model
@@ -29,7 +33,12 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             clearLists()
             search()
         }
+        binding.back.setOnClickListener {
+            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomeFragment()).commit()
+        }
     }
+
 
     //Searching for a specific country
     private fun search(){
@@ -43,17 +52,23 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         }
         _cityList.forEach {
             _cityListItem.add(it.city)
-            _populationList.add(it.populationCity.toString())
+            _populationList.add(it.populationCity)
         }
         bindCountry(Repository.getMaxCityOfCountry(countryName))
+        binding.image.isVisible = false
+        binding.cardView.isVisible = true
         getPopulation()
+        binding.constraintLayout1.isVisible = true
     }
 
     // display the search result
     private fun bindCountry(country: Model){
         binding.apply {
-            tvCountrySearch.text = ("${country.city}, ${country.country}")
-            tvPopulationSearch.text = ("${country.populationCity} M")
+            cityMax.text = country.city
+            countryMax.text = country.abbreviation
+            longitudeMaxNum.text = country.lon.toString()
+            LatitudeMaxNum.text = country.lat.toString()
+            populationMax.text = ("${country.populationCity} M")
         }
     }
 
