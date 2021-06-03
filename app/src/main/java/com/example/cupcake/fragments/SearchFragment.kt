@@ -27,7 +27,10 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
-            search()
+            countrySearch()
+            //hide keyboard
+            binding.etSearch.onEditorAction(EditorInfo.IME_ACTION_DONE)
+
         }
     }
 

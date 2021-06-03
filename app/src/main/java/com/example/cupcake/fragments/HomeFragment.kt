@@ -1,7 +1,7 @@
 package com.example.cupcake.fragments
 
+import android.annotation.SuppressLint
 import android.graphics.Color
-import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -23,6 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
             transaction.replace(R.id.fragment_container, SearchFragment()).commit()
+            transaction.replace(R.id.fragment_container, SearchFragment()).addToBackStack(null).commit()
         }
     }
     override fun addCallBack() {
