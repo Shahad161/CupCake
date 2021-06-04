@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -111,7 +112,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
-}
+    }
 
     //clear old value after finish the search
     private fun clearLists() {
