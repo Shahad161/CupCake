@@ -1,10 +1,11 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
+import android.os.Build
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -30,10 +31,11 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private val _populationDataList = arrayListOf<BarEntry>()
 
     override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
-            search()
+            countrySearch()
             //hide keyboard
             binding.etSearch.onEditorAction(EditorInfo.IME_ACTION_DONE)
 
@@ -46,7 +48,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
 
     //Searching for a specific country
-    private fun search(){
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun countrySearch(){
         val countryName = binding.etSearch.text.toString()
         if(countryName == ""){
             return Toast.makeText(activity, "Enter Country Name you want to search about.", Toast.LENGTH_LONG).show()
@@ -55,7 +58,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         if(_cityList.size == 0){
             return Toast.makeText(activity, "Country not found", Toast.LENGTH_LONG).show()
         }
-        _cityList.filter { it.cityType == Constant.key.ADMIN || it.cityType == Constant.key.PRIMARY }.forEach {
+        _cityList.filter { (it.cityType == Constant.key.ADMIN || it.cityType == Constant.key.PRIMARY) && it.populationCity != 0 }.forEach {
             _cityListItem.add(it.city)
             _populationList.add(it.populationCity.toString())
         }
@@ -81,22 +84,15 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     }
     //get all population for cities in some country
     private fun getPopulation() {
-        // solve the wasted data in population
         for (i in 0 until _cityListItem.size) {
-            if (_populationList[i].trim().isNotEmpty()) {
-                _populationDataList.add(BarEntry(_populationList[i].toFloat(),i)) }
-
-            else {
-                _populationList[i] = "0"
-                _populationDataList.add(BarEntry(_populationList[i].toFloat(), i))
-                Toast.makeText(activity, "the 0 in some city mean data not fond", Toast.LENGTH_SHORT).show() }
+            _populationDataList.add(BarEntry(_populationList[i].toFloat(),i))
         }
-        BarChart()
+        addBarChart()
     }
 
 
 // draw BarChart
-    private fun BarChart(){
+    private fun addBarChart(){
         val barChart: BarChart = binding.barChart
         barDataSet = BarDataSet(_populationDataList, "Population")
         barData = BarData(_cityListItem,barDataSet)
@@ -118,8 +114,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
-        binding.barChart.xAxis.setDrawLabels(true)
-  //  binding.barChart.xAxis.setValueFormatter()
+
     }
 
     //clear old value after finish the search
