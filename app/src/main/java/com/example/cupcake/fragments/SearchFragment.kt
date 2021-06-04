@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -63,7 +62,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         binding.image.isVisible = false
         binding.cardView.isVisible = true
         getPopulation()
-        binding.constraintLayout1.isVisible = true
+        binding.barChart.isVisible = true
     }
 
     // display the search result
@@ -98,7 +97,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 14.5f
         barChart.animateXY(2000,2000)
-        barChart.setVisibleXRangeMaximum(3f)
+        barChart.setVisibleXRangeMaximum(5f)
         barChart.xAxis.textColor = Color.WHITE
         barChart.xAxis.textSize = 14.5f
         barChart.axisRight.textColor = Color.WHITE
@@ -107,12 +106,14 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barChart.setDescriptionColor(Color.WHITE)
         barChart.legend.textColor = Color.WHITE
         val rightYAxis: YAxis = binding.barChart.axisRight
-        rightYAxis.isEnabled = false
-        rightYAxis.setDrawGridLines(false)
+        rightYAxis.isEnabled = true
+        rightYAxis.setDrawGridLines(true)
+        rightYAxis.textSize = 1f
         val liftYAxis: YAxis = binding.barChart.axisLeft
-        liftYAxis.isEnabled = false
-        liftYAxis.setDrawGridLines(false)
-    }
+        liftYAxis.isEnabled = true
+        liftYAxis.textSize = 1f
+        liftYAxis.setDrawGridLines(true)
+}
 
     //clear old value after finish the search
     private fun clearLists() {

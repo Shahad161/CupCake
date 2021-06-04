@@ -3,7 +3,10 @@ package com.example.cupcake.fragments
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
+import com.example.cupcake.R
 import com.example.cupcake.R.layout.item_model
 import com.example.cupcake.databinding.ItemModelBinding
 import com.example.cupcake.model.Model
@@ -17,6 +20,7 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
 
     override fun onBindViewHolder(holder: modelViewHolders, position: Int) {
         val currentModel = list[position]
+
         holder.binding.apply {
             countryMax.text = currentModel.abbreviation
             cityMax.text = currentModel.city
@@ -25,12 +29,15 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
             LatitudeMaxNum.text = currentModel.lat.toString()
             cityMax.setOnClickListener{ listener.OnClickCountry(currentModel.country) }
             root.setOnClickListener { listener.OnClickItem(currentModel) }
+            holder.itemView.animation =
+                AnimationUtils.loadAnimation(holder.itemView.context, R.anim.cards_anim)
         }
 
     }
     override fun getItemCount() =list.size
 
     class modelViewHolders(viewItem: View): RecyclerView.ViewHolder(viewItem) {
+   //     var animation: Animation? = null
         val binding = ItemModelBinding.bind(viewItem)
     }
 
