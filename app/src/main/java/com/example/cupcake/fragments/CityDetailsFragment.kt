@@ -29,7 +29,6 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
             abbreviation.text = model.abbreviation
             countrylaple.text = model.country
             city.text = model.city
-            populationcountry.text = ("${model.populationCountry.toString()} M")
             populationcity.text = ("${model.populationCity} M")
             LatitudeNum.text = model.lat.toString()
             longitudeNum.text = model.lon.toString()
