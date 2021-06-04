@@ -1,6 +1,7 @@
 package com.example.cupcake.fragments
 
-
+import androidx.fragment.app.FragmentTransaction
+import com.example.cupcake.R
 import com.example.cupcake.databinding.FragmentCityDetailsBinding
 import com.example.cupcake.model.Model
 import com.example.cupcake.util.Constant
@@ -9,6 +10,10 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
     override fun getViewBinding() = FragmentCityDetailsBinding.inflate(layoutInflater)
     var model: Model? = null
     override fun setUpViews() {
+        binding.back.setOnClickListener {
+            val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+            transaction.replace(R.id.fragment_container, HomeFragment()).commit()
+        }
     }
 
     override fun onStart() {
@@ -21,9 +26,11 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
     }
     private fun bindModel(model: Model) {
         binding.apply {
-            country.text = model.abbreviation
+            abbreviation.text = model.abbreviation
+            countrylaple.text = model.country
             city.text = model.city
-            population.text = model.populationCity.toString()
+            populationcountry.text = ("${model.populationCountry.toString()} M")
+            populationcity.text = ("${model.populationCity} M")
             LatitudeNum.text = model.lat.toString()
             longitudeNum.text = model.lon.toString()
         }

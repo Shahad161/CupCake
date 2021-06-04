@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.core.view.isVisible
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
@@ -36,11 +35,10 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
             search()
             //hide keyboard
             binding.etSearch.onEditorAction(EditorInfo.IME_ACTION_DONE)
-
         }
         binding.back.setOnClickListener {
             val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
-            transaction.replace(R.id.fragment_container, HomeFragment()).commit()
+            transaction.add(R.id.fragment_container, HomeFragment()).commit()
         }
     }
 
