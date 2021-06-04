@@ -26,7 +26,7 @@ class CityDetailsFragment: BaseFragment<FragmentCityDetailsBinding>() {
     }
     private fun bindModel(model: Model) {
         binding.apply {
-            abbreviation.text = model.abbreviation
+            abbreviation.text = model.iso
             countrylaple.text = model.country
             city.text = model.city
             populationcity.text = ("${model.populationCity} M")

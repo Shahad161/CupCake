@@ -18,7 +18,7 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
     override fun onBindViewHolder(holder: modelViewHolders, position: Int) {
         val currentModel = list[position]
         holder.binding.apply {
-            countryMax.text = currentModel.abbreviation
+            countryMax.text = currentModel.iso
             cityMax.text = currentModel.city
             populationMax.text = ("${currentModel.populationCity} M")
             longitudeMaxNum.text = currentModel.lon.toString()
