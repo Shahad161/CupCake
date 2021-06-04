@@ -37,4 +37,12 @@ object Repository {
     fun getAllCities(countryName: String): List<Model> {
         return countryList.filter { it.country.equals(countryName, ignoreCase = true) }
     }
+    //Get object of one city
+    fun getCityObject(cityName: String):Model {
+        var citiesList : Model? = null
+        for (city in countryList) {
+            if(city.city == cityName) citiesList = city
+        }
+        return citiesList!!
+    }
 }

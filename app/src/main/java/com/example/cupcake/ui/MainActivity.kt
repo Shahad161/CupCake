@@ -15,11 +15,11 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListner{
-    override val Log_tag: String = "dd"
+    override val Log_tag: String = "MainActivity"
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
 
     override fun setup() {
-        addFragment(HomeFragment())
+        replaceFragment(HomeFragment())
         parseFile()
     }
 
@@ -27,9 +27,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
     }
 
 //add fragment inside Home_Activity
-    private fun addFragment(fragment: Fragment){
+    private fun replaceFragment(fragment: Fragment){
     val transaction = supportFragmentManager.beginTransaction()
-    transaction.add(R.id.fragment_container, fragment).addToBackStack(null).commit()
+    transaction.replace(R.id.fragment_container, fragment).addToBackStack(null).commit()
     }
 
 // read data from Csv file
@@ -48,7 +48,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
         val cityDetailsFragment = CityDetailsFragment()
         bundle.putParcelable(Constant.key.Model, model)
         cityDetailsFragment.arguments = bundle
-        addFragment(cityDetailsFragment)
+        replaceFragment(cityDetailsFragment)
     }
 
     override fun OnClickCountry(name: String) {

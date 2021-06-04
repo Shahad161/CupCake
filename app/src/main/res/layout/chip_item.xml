@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.chip.Chip xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/chip"
+    android:textColor="@color/white"
+    app:closeIconTint="@color/white"
+    app:chipBackgroundColor="@color/line"
+    style="@style/Widget.MaterialComponents.Chip.Choice"
+    >
+
+</com.google.android.material.chip.Chip>
+<!--    app:closeIcon="@drawable/ic_baseline_close_24"-->
