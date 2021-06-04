@@ -7,7 +7,6 @@ import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
-import com.example.cupcake.ui.MainActivity
 import com.example.cupcake.ui.ModelInteractionListner
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListner {
@@ -21,19 +20,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
         passData = activity as ModelInteractionListner
         binding.btnToSearch.setOnClickListener {
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-            transaction.replace(R.id.fragment_container, SearchFragment()).commit()
+            transaction.replace(R.id.fragment_container, SearchFragment()).addToBackStack(null).commit()
         }
     }
     override fun addCallBack() {
-        getCitiesInfo()
         val adapter = ModelAdapter(Repository.getCountryList().sortedBy { it.populationCity }.reversed(), this) // list of cities to adapter
         binding.recycleMain.adapter = adapter
     }
 
-    //call function to get Info from Csv file
-    private fun getCitiesInfo(){
-        (activity as MainActivity).parseFile()
-    }
+
     override fun OnClickItem(model: Model) {
         passData.OnClickItem(model)
     }

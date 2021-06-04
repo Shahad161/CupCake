@@ -20,6 +20,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
 
     override fun setup() {
         addFragment(HomeFragment())
+        parseFile()
     }
 
     override fun addCallBack() {

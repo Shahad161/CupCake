@@ -1,10 +1,8 @@
 package com.example.cupcake.fragments
 
 import android.graphics.Color
-import android.os.Build
 import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
@@ -31,7 +29,6 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private val _populationDataList = arrayListOf<BarEntry>()
 
     override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
-    @RequiresApi(Build.VERSION_CODES.N)
     override fun setUpViews() {
         binding.searchbtn.setOnClickListener{
             clearLists()
@@ -48,7 +45,6 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
 
 
     //Searching for a specific country
-    @RequiresApi(Build.VERSION_CODES.N)
     private fun countrySearch(){
         val countryName = binding.etSearch.text.toString()
         if(countryName == ""){
@@ -115,8 +111,6 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         val liftYAxis: YAxis = binding.barChart.axisLeft
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
-
-
 }
 
     //clear old value after finish the search
