@@ -99,10 +99,11 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         binding.barChart.data = barData
         barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
-        barDataSet.valueTextSize = 14f
+        barDataSet.valueTextSize = 14.5f
         barChart.animateXY(2000,2000)
-        barChart.setVisibleXRangeMaximum(5f)
+        barChart.setVisibleXRangeMaximum(3f)
         barChart.xAxis.textColor = Color.WHITE
+        barChart.xAxis.textSize = 14.5f
         barChart.axisRight.textColor = Color.WHITE
         barChart.axisLeft.textColor = Color.WHITE
         barChart.setDescription("Cities Population")
@@ -115,7 +116,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         liftYAxis.isEnabled = false
         liftYAxis.setDrawGridLines(false)
 
-    }
+
+}
 
     //clear old value after finish the search
     private fun clearLists() {
