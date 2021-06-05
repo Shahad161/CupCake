@@ -33,58 +33,49 @@
         android:id="@+id/imageView"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
         android:src="@drawable/horizontal_world_map_slices_prismatic"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="360dp"
-        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.911">
+        app:layout_constraintTop_toBottomOf="@+id/searchText">
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
             app:layout_constraintStart_toStartOf="@+id/constraintLayout4"
-            app:singleLine="false"
+            app:singleLine="true"
             app:singleSelection="true" />
-    </ScrollView>
+    </HorizontalScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="400dp"
+        android:layout_height="0dp"
         android:background="@drawable/cardshape"
         android:elevation="@dimen/smallSpace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
         <TextView
             android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/actor"
             android:paddingStart="@dimen/smallSpace"
             android:text="Baghdad"
@@ -93,7 +84,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/countrylaple"
+            app:layout_constraintTop_toTopOf="@+id/countrylaple"
             app:layout_constraintVertical_chainStyle="packed"
             tools:ignore="RtlSymmetry" />
 
@@ -115,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/actor"
             android:text="IRQ"
             android:textColor="@color/white"
