@@ -97,7 +97,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barDataSet.valueTextColor = Color.WHITE
         barDataSet.valueTextSize = 13.5f
         barChart.animateXY(2000,2000)
-        barChart.setVisibleXRangeMaximum(3f)
+        barChart.setVisibleXRangeMaximum(2f)
         barChart.xAxis.textColor = Color.WHITE
         barChart.xAxis.textSize = 13.5f
         barChart.axisRight.textColor = Color.WHITE
@@ -106,13 +106,13 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barChart.setDescriptionColor(Color.WHITE)
         barChart.legend.textColor = Color.WHITE
         val rightYAxis: YAxis = binding.barChart.axisRight
-        rightYAxis.isEnabled = false
-        rightYAxis.setDrawGridLines(false)
+        rightYAxis.isEnabled = true
+        rightYAxis.setDrawGridLines(true)
         rightYAxis.textSize = 1f
         val liftYAxis: YAxis = binding.barChart.axisLeft
-        liftYAxis.isEnabled = false
+        liftYAxis.isEnabled = true
         liftYAxis.textSize = 1f
-        liftYAxis.setDrawGridLines(false)
+        liftYAxis.setDrawGridLines(true)
 }
 
     //clear old value after finish the search
