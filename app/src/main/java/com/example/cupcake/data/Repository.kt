@@ -1,5 +1,4 @@
 package com.example.cupcake.data
-
 import com.example.cupcake.model.Model
 
 object Repository {

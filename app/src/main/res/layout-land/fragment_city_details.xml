@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlue2"
-    android:padding="16dp"
+    android:padding="@dimen/medalSpace"
     tools:context=".fragments.SearchFragment">
 
     <ImageButton
@@ -16,7 +16,8 @@
         android:src="@drawable/ic_baseline_arrow_back_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/searchText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchText" />
+        app:layout_constraintTop_toTopOf="@+id/searchText"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/searchText"
@@ -25,9 +26,10 @@
         android:fontFamily="@font/actor"
         android:text="City Details"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="@dimen/landscapetitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -37,14 +39,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        tools:ignore="ContentDescription" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/medalSpace"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,7 +56,7 @@
 
         <com.google.android.material.chip.ChipGroup
             android:id="@+id/chip_group"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
             app:layout_constraintEnd_toEndOf="@+id/constraintLayout4"
@@ -78,7 +81,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/actor"
             android:paddingStart="@dimen/smallSpace"
-            android:text="Baghdad"
+            android:text="@string/baghdad"
             android:textColor="@color/white"
             android:textSize="36sp"
             android:textStyle="bold"
@@ -93,13 +96,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/arimo"
-            android:text="4,555,555 M"
+            android:text="@string/_4_856_736_m"
             android:textColor="@color/lightGray"
-            android:textSize="16sp"
+            android:textSize="@dimen/medalSpace"
             app:layout_constraintBottom_toBottomOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView5" />
+            app:layout_constraintStart_toEndOf="@+id/imageView5"
+            tools:ignore="SpUsage" />
 
         <TextView
             android:id="@+id/abbreviation"
@@ -108,19 +112,20 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/actor"
-            android:text="IRQ"
+            android:text="@string/irq"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="@dimen/largeSpace"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpUsage" />
 
         <View
             android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="2dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginStart="@dimen/verylargeSpace"
+            android:layout_marginEnd="@dimen/verylargeSpace"
             android:background="@drawable/linewhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,16 +137,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/lapel"
-            android:paddingStart="8dp"
-            android:paddingTop="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="4dp"
-            android:text="IRAQ"
+            android:paddingStart="@dimen/smallSpace"
+            android:paddingTop="@dimen/tinyspace"
+            android:paddingEnd="@dimen/smallSpace"
+            android:paddingBottom="@dimen/tinyspace"
+            android:text="@string/iraq"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="@dimen/medalSpace"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            tools:ignore="SpUsage" />
 
         <TextView
             android:id="@+id/tv_longitude"
@@ -150,7 +156,7 @@
             android:fontFamily="@font/actor"
             android:text="@string/longitude"
             android:textColor="@color/lightGray"
-            android:textSize="14dp"
+            android:textSize="@dimen/descriptionText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -204,19 +210,21 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city" />
+            app:layout_constraintTop_toBottomOf="@+id/city"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="60dp"
             android:layout_height="80dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/smallSpace"
             android:src="@drawable/ic_baseline_location_on_24"
             app:layout_constraintEnd_toStartOf="@+id/tv_longitude"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/populationcity" />
+            app:layout_constraintTop_toBottomOf="@+id/populationcity"
+            tools:ignore="ContentDescription" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

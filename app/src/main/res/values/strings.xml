@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">CupCake</string>
-    <string name="longitude">Longitude</string>
-    <string name="latitude">Latitude</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="population">4,433,453 M</string>
@@ -16,6 +14,20 @@
     <string name="textpopulation">Population:-</string>
     <string name="textlongitude">Longitude:-</string>
     <string name="textlatitude">Latitude:-</string>
-
-
+    <string name="welcome">Welcome...</string>
+    <string name="let_s_discover_the_word">Let\'s Discover The Word</string>
+    <string name="we_wish_you_have_a_nice_day_full_of_knowledge">We wish you have a nice day full of knowledge.</string>
+    <string name="search">Search</string>
+    <string name="_4_856_736_m">4,856,736 M</string>
+    <string name="baghdad">Baghdad</string>
+    <string name="what_are">What Are</string>
+    <string name="you_searching_for">You Searching For?</string>
+    <string name="you_would_find_here_all_the_information_you_need">You Would Find Here All The Information You Need.</string>
+    <string name="searching">Searching....</string>
+    <string name="irq">IRQ</string>
+    <string name="longitude">Longitude</string>
+    <string name="city_details">City Details</string>
+    <string name="_343_5457">343.5457</string>
+    <string name="latitude">Latitude</string>
+    <string name="iraq">IRAQ</string>
 </resources>

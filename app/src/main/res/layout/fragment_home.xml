@@ -12,51 +12,47 @@
         android:id="@+id/btn_toSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="@dimen/largeSpace"
+        android:layout_marginEnd="@dimen/largeSpace"
         android:background="@color/darkBlue2"
         android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Welcome..."
+        android:layout_marginStart="@dimen/largeSpace"
+        android:text="@string/welcome"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="@dimen/WelcomeText"
         android:fontFamily="@font/actor"
-
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/btn_toSearch"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/btn_toSearch" />
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Let's Discover The Word"
+        android:text="@string/let_s_discover_the_word"
         android:fontFamily="@font/actor"
-
-        android:textSize="14sp"
+        android:textSize="@dimen/descriptionText"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="We wish you have a nice day full of knowledge."
+        android:text="@string/we_wish_you_have_a_nice_day_full_of_knowledge"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="@dimen/descriptionText"
         android:fontFamily="@font/actor"
-
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -85,6 +81,5 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/earth1" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

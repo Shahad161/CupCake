@@ -5,6 +5,7 @@
     <dimen name="medalSpace">16dp</dimen>
     <dimen name="largeSpace">24dp</dimen>
     <dimen name="verylargeSpace">32dp</dimen>
+    <dimen name="biggestSpace">64dp</dimen>
     <dimen name="textSize">25sp</dimen>
     <dimen name="textofpopulation">16sp</dimen>
     <dimen name="textsizeoflan_lat">10sp</dimen>
@@ -13,6 +14,10 @@
     <dimen name="heightofCity">60dp</dimen>
     <dimen name="textofCity">35sp</dimen>
     <dimen name="Elevation">5dp</dimen>
-    <dimen name="text_size_lat_lan">14sp</dimen>
+    <dimen name="WelcomeText">30sp</dimen>
+    <dimen name="descriptionText">14sp</dimen>
+    <dimen name="twelve">12dp</dimen>
+    <dimen name="tinyspace">4dp</dimen>
+    <dimen name="landscapetitle">20sp</dimen>
 
 </resources>

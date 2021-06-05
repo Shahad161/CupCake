@@ -6,9 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkBlue2"
-    android:padding="16dp"
-    tools:context=".fragments.SearchFragment"
-   >
+    android:padding="@dimen/medalSpace"
+    tools:context=".fragments.SearchFragment">
 
     <ImageButton
         android:id="@+id/back"
@@ -18,14 +17,15 @@
         android:src="@drawable/ic_baseline_arrow_back_ios_24"
         app:layout_constraintBottom_toBottomOf="@+id/searchText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/searchText" />
+        app:layout_constraintTop_toTopOf="@+id/searchText"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/searchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/actor"
-        android:text="Search"
+        android:text="@string/search"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,36 +37,38 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/adamina2"
-        android:text="What Are"
+        android:text="@string/what_are"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/largeSpace"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView" />
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        tools:ignore="SpUsage" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="none"
-        android:text="You Searching For?"
+        android:text="@string/you_searching_for"
         android:fontFamily="@font/adamina2"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/largeSpace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="SpUsage" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/adamina2"
-        android:text="You Would Find Here All The Information You Need."
+        android:text="@string/you_would_find_here_all_the_information_you_need"
         android:textAlignment="center"
         android:textColor="@color/lightGray"
-        android:textSize="14sp"
+        android:textSize="@dimen/descriptionText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -75,40 +77,43 @@
         android:id="@+id/et_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/textofpopulation"
         android:background="@drawable/search"
         android:fontFamily="@font/actor"
-        android:hint="Searching...."
+        android:hint="@string/searching"
         android:singleLine="true"
-        android:padding="12dp"
+        android:padding="@dimen/twelve"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchText"
-        app:queryHint="this box for searching country" />
+        app:queryHint="this box for searching country"
+        tools:ignore="Autofill,TextFields" />
 
     <ImageButton
         android:id="@+id/searchbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/medalSpace"
         android:background="@color/darkBlue"
         android:src="@drawable/ic_baseline_search_24"
         app:layout_constraintBottom_toBottomOf="@+id/et_search"
         app:layout_constraintEnd_toEndOf="@+id/et_search"
-        app:layout_constraintTop_toTopOf="@+id/et_search" />
+        app:layout_constraintTop_toTopOf="@+id/et_search"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="@dimen/biggestSpace"
         android:src="@drawable/earth_globe_with_parallel_horizontal_lines_pattern"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:tint="@color/lightGray" />
+        app:tint="@color/lightGray"
+        tools:ignore="ContentDescription" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -120,7 +125,7 @@
         app:cardBackgroundColor = "@color/darkBlue"
         app:layout_constraintTop_toBottomOf="@+id/et_search"
         app:layout_editor_absoluteY="176dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/medalSpace"
         app:layout_constraintEnd_toEndOf="@+id/et_search"
         app:layout_constraintStart_toStartOf="@+id/et_search">
 
@@ -149,12 +154,12 @@
                 android:id="@+id/cityMax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/medalSpace"
                 android:ellipsize="end"
                 android:fontFamily="@font/actor"
                 android:lines="1"
-                android:paddingStart="8dp"
-                android:text="Baghdad"
+                android:paddingStart="@dimen/smallSpace"
+                android:text="@string/baghdad"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +168,8 @@
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/countryMax"
@@ -171,16 +177,16 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:lines="1"
-                android:paddingStart="8dp"
-                android:text="IRQ"
+                android:paddingStart="@dimen/smallSpace"
+                android:text="@string/irq"
                 android:fontFamily="@font/actor"
-
                 android:textColor="@color/lightGray"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/cityMax"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/cityMax" />
+                app:layout_constraintStart_toEndOf="@+id/cityMax"
+                tools:ignore="RtlSymmetry" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -188,13 +194,14 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_baseline_people_24"
                 app:layout_constraintBottom_toBottomOf="@+id/populationMax"
-                app:layout_constraintEnd_toStartOf="@+id/populationMax" />
+                app:layout_constraintEnd_toStartOf="@+id/populationMax"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/populationMax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4,856,736 M"
+                android:text="@string/_4_856_736_m"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -202,57 +209,59 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/view3" />
 
-
             <TextView
                 android:id="@+id/tv_longitudeMax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="8dp"
+                android:paddingEnd="@dimen/smallSpace"
                 android:fontFamily="@font/actor"
-
-                android:text="Longitude"
+                android:text="@string/longitude"
                 android:textColor="@color/lightGray"
-                android:textSize="10sp"
+                android:textSize="@dimen/textsizeoflan_lat"
                 app:layout_constraintStart_toStartOf="@+id/longitudeMaxNum"
-                app:layout_constraintTop_toBottomOf="@+id/longitudeMaxNum" />
+                app:layout_constraintTop_toBottomOf="@+id/longitudeMaxNum"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/longitudeMaxNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:paddingEnd="8dp"
-                android:text="343.5457"
+                android:layout_marginStart="@dimen/largeSpace"
+                android:layout_marginTop="@dimen/medalSpace"
+                android:paddingEnd="@dimen/smallSpace"
+                android:text="@string/_343_5457"
                 android:textColor="@color/white"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cityMax" />
+                app:layout_constraintTop_toBottomOf="@+id/cityMax"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/tv_LatitudeMax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="8dp"
-                android:text="Latitude"
+                android:paddingEnd="@dimen/smallSpace"
+                android:text="@string/latitude"
                 android:fontFamily="@font/actor"
                 android:textColor="@color/lightGray"
-                android:textSize="10sp"
+                android:textSize="@dimen/textsizeoflan_lat"
                 app:layout_constraintStart_toStartOf="@+id/LatitudeMaxNum"
-                app:layout_constraintTop_toBottomOf="@+id/LatitudeMaxNum" />
+                app:layout_constraintTop_toBottomOf="@+id/LatitudeMaxNum"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/LatitudeMaxNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:paddingEnd="4dp"
-                android:text="343.5457"
+                android:layout_marginTop="@dimen/medalSpace"
+                android:layout_marginEnd="@dimen/largeSpace"
+                android:paddingEnd="@dimen/tinyspace"
+                android:text="@string/_343_5457"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="@dimen/descriptionText"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cityMax" />
+                app:layout_constraintTop_toBottomOf="@+id/cityMax"
+                tools:ignore="RtlSymmetry" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -261,7 +270,7 @@
         android:id="@+id/barChart"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/verylargeSpace"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
