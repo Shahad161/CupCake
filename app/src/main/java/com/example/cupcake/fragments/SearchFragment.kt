@@ -106,13 +106,13 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         barChart.setDescriptionColor(Color.WHITE)
         barChart.legend.textColor = Color.WHITE
         val rightYAxis: YAxis = binding.barChart.axisRight
-        rightYAxis.isEnabled = true
-        rightYAxis.setDrawGridLines(true)
+        rightYAxis.isEnabled = false
+        rightYAxis.setDrawGridLines(false)
         rightYAxis.textSize = 1f
         val liftYAxis: YAxis = binding.barChart.axisLeft
-        liftYAxis.isEnabled = true
+        liftYAxis.isEnabled = false
         liftYAxis.textSize = 1f
-        liftYAxis.setDrawGridLines(true)
+        liftYAxis.setDrawGridLines(false)
 }
 
     //clear old value after finish the search

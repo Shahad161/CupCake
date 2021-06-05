@@ -32,5 +32,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
     override fun OnClickItem(model: Model) {
         passData.OnClickItem(model)
     }
-
+    override fun onDestroy() {
+        super.onDestroy()
+        activity?.finish()
+    }
 }
