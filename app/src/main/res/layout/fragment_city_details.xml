@@ -159,23 +159,22 @@
             android:text="@string/longitude"
             android:textColor="@color/lightGray"
             android:textSize="14dp"
-            app:layout_constraintStart_toStartOf="@+id/longitudeNum"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/longitudeNum" />
 
         <TextView
             android:id="@+id/longitudeNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
             android:fontFamily="@font/arimo"
             android:paddingEnd="@dimen/medalSpace"
             android:text="@string/text_lat_lan"
             android:textColor="@color/white"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/populationcity"
+            app:layout_constraintStart_toStartOf="@+id/tv_longitude"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
             tools:ignore="RtlSymmetry" />
 
         <TextView
@@ -222,7 +221,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_baseline_location_on_24"
-            app:layout_constraintEnd_toStartOf="@+id/longitudeNum"
+            app:layout_constraintEnd_toStartOf="@+id/tv_longitude"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
