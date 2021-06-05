@@ -48,11 +48,11 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private fun countrySearch(){
         val countryName = binding.etSearch.text.toString()
         if(countryName == ""){
-            return Toast.makeText(activity, "Enter Country Name", Toast.LENGTH_LONG).show()
+            return Toast.makeText(activity, "Enter Country Name.", Toast.LENGTH_LONG).show()
         }
         _cityList = Repository.getAllCities(countryName).toMutableList()
         if(_cityList.size == 0){
-            return Toast.makeText(activity, "Country not found", Toast.LENGTH_LONG).show()
+            return Toast.makeText(activity, "Country not found.", Toast.LENGTH_LONG).show()
         }
         _cityList.filter { (it.cityType == Constant.key.ADMIN || it.cityType == Constant.key.PRIMARY) && it.populationCity != 0 }.forEach {
             _cityListItem.add(it.city)

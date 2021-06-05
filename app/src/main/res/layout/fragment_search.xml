@@ -8,7 +8,7 @@
     android:background="@color/darkBlue2"
     android:padding="16dp"
     tools:context=".fragments.SearchFragment"
-    app:layoutDescription="@xml/activity_search_scene">
+   >
 
     <ImageButton
         android:id="@+id/back"
@@ -137,7 +137,7 @@
                 android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
-                android:background="@drawable/line"
+                android:background="@drawable/linecard"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
