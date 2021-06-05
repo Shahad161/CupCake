@@ -35,11 +35,11 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="@font/adamina2"
         android:text="What Are"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardView" />
@@ -53,17 +53,18 @@
         android:fontFamily="@font/adamina2"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/adamina2"
         android:text="You Would Find Here All The Information You Need."
         android:textAlignment="center"
-        android:fontFamily="@font/adamina2"
         android:textColor="@color/lightGray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,13 +102,13 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/searchbackground"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/earth_globe_with_parallel_horizontal_lines_pattern"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_search"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:tint="@color/lightGray" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -150,9 +151,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ellipsize="end"
+                android:fontFamily="@font/actor"
                 android:lines="1"
                 android:paddingStart="8dp"
-                android:fontFamily="@font/actor"
                 android:text="Baghdad"
                 android:textColor="@color/white"
                 android:textSize="30sp"
@@ -265,6 +266,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
