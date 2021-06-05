@@ -1,12 +1,12 @@
 package com.example.cupcake.fragments
 
 import android.annotation.SuppressLint
-import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import com.example.cupcake.R
 import com.example.cupcake.data.Repository
 import com.example.cupcake.databinding.FragmentHomeBinding
 import com.example.cupcake.model.Model
+import com.example.cupcake.ui.ModelAdapter
 import com.example.cupcake.ui.ModelInteractionListner
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListner {

@@ -1,16 +1,14 @@
-package com.example.cupcake.fragments
+package com.example.cupcake.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cupcake.R
 import com.example.cupcake.R.layout.item_model
 import com.example.cupcake.databinding.ItemModelBinding
 import com.example.cupcake.model.Model
-import com.example.cupcake.ui.ModelInteractionListner
 
 class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner): RecyclerView.Adapter<ModelAdapter.modelViewHolders>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): modelViewHolders {
@@ -36,7 +34,6 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
     override fun getItemCount() =list.size
 
     class modelViewHolders(viewItem: View): RecyclerView.ViewHolder(viewItem) {
-   //     var animation: Animation? = null
         val binding = ItemModelBinding.bind(viewItem)
     }
 

@@ -48,7 +48,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private fun countrySearch(){
         val countryName = binding.etSearch.text.toString()
         if(countryName == ""){
-            return Toast.makeText(activity, "Enter Country Name you want to search about.", Toast.LENGTH_LONG).show()
+            return Toast.makeText(activity, "Enter Country Name", Toast.LENGTH_LONG).show()
         }
         _cityList = Repository.getAllCities(countryName).toMutableList()
         if(_cityList.size == 0){
@@ -95,11 +95,11 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
         binding.barChart.data = barData
         barDataSet.setColors(ColorTemplate.PASTEL_COLORS, 250)
         barDataSet.valueTextColor = Color.WHITE
-        barDataSet.valueTextSize = 14.5f
+        barDataSet.valueTextSize = 13.5f
         barChart.animateXY(2000,2000)
-        barChart.setVisibleXRangeMaximum(5f)
+        barChart.setVisibleXRangeMaximum(3f)
         barChart.xAxis.textColor = Color.WHITE
-        barChart.xAxis.textSize = 14.5f
+        barChart.xAxis.textSize = 13.5f
         barChart.axisRight.textColor = Color.WHITE
         barChart.axisLeft.textColor = Color.WHITE
         barChart.setDescription("Cities Population")
