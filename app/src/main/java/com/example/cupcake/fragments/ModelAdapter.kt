@@ -23,7 +23,6 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
             populationMax.text = ("${currentModel.populationCity} M")
             longitudeMaxNum.text = currentModel.lon.toString()
             LatitudeMaxNum.text = currentModel.lat.toString()
-            cityMax.setOnClickListener{ listener.OnClickCountry(currentModel.country) }
             root.setOnClickListener { listener.OnClickItem(currentModel) }
         }
 
