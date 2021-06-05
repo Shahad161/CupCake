@@ -50,7 +50,4 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), ModelInteractionListne
         cityDetailsFragment.arguments = bundle
         replaceFragment(cityDetailsFragment)
     }
-
-    override fun OnClickCountry(name: String) {
-    }
 }

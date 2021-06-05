@@ -4,5 +4,4 @@ import com.example.cupcake.model.Model
 
 interface ModelInteractionListner {
     fun OnClickItem(model: Model)
-    fun OnClickCountry(name: String)
 }
