@@ -22,12 +22,11 @@ class ModelAdapter(val list: List<Model>,val listener: ModelInteractionListner):
         val currentModel = list[position]
 
         holder.binding.apply {
-            countryMax.text = currentModel.abbreviation
+            countryMax.text = currentModel.iso
             cityMax.text = currentModel.city
             populationMax.text = ("${currentModel.populationCity} M")
             longitudeMaxNum.text = currentModel.lon.toString()
             LatitudeMaxNum.text = currentModel.lat.toString()
-            cityMax.setOnClickListener{ listener.OnClickCountry(currentModel.country) }
             root.setOnClickListener { listener.OnClickItem(currentModel) }
             holder.itemView.animation =
                 AnimationUtils.loadAnimation(holder.itemView.context, R.anim.cards_anim)

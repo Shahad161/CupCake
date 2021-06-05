@@ -5,7 +5,7 @@ object Constant {
         const val CITY = 1
         const val COUNTRY = 4
         const val POPULATIONCITY = 9
-        const val ABBREVIATION = 6
+        const val ISO = 6
         const val LON = 3
         const val LAT = 2
         const val CITY_TYPE =8

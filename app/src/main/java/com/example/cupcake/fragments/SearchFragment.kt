@@ -69,7 +69,7 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>() {
     private fun bindCountry(country: Model){
         binding.apply {
             cityMax.text = country.city
-            countryMax.text = country.abbreviation
+            countryMax.text = country.iso
             longitudeMaxNum.text = country.lon.toString()
             LatitudeMaxNum.text = country.lat.toString()
             populationMax.text = ("${country.populationCity} M")

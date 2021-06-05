@@ -32,7 +32,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), ModelInteractionListne
     override fun OnClickItem(model: Model) {
         passData.OnClickItem(model)
     }
-    override fun OnClickCountry(name: String) {
-        Toast.makeText(context, name, Toast.LENGTH_SHORT).show()
-    }
+
 }
